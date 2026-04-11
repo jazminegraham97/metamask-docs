@@ -37,7 +37,7 @@
     "@docusaurus/plugin-google-tag-manager": "3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
     "@docusaurus/remark-plugin-npm2yarn": "3.9.2",
-    "@docusaurus/theme-common": "3.9.2",
+    "@docusaurus/theme-common": "3.10.0",
     "@docusaurus/theme-mermaid": "3.9.2",
     "@intercom/messenger-js-sdk": "^0.0.14",
     "@lottiefiles/react-lottie-player": "^3.6.0",
