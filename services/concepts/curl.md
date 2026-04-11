@@ -48,11 +48,11 @@ curl https://mainnet.infura.io/v3/<YOUR-API-KEY> \
 
 :::info
 
-Replace `<YOUR-API-KEY>` with a specific [API key](../../../developer-tools/dashboard/get-started/create-api/).
+Replace `<YOUR-API-KEY>` with a specific [API key](/developer-tools/dashboard/get-started/create-api).
 
 :::
 
-#### -X flag
+#### `-X` flag
 
 The `-X` flag specifies a common [HTTP method](https://www.w3schools.com/tags/ref_httpmethods.asp).
 
@@ -60,7 +60,7 @@ The `-X` flag specifies a common [HTTP method](https://www.w3schools.com/tags/re
 -X POST \
 ```
 
-#### -H flag
+#### `-H` flag
 
 The `-H` or `--header` flag specifies [header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) information.
 
@@ -70,11 +70,11 @@ The example specifies the `Content-Type` to be `application/json` which means th
 -H "Content-Type: application/json" \
 ```
 
-#### -d flag
+#### `-d` flag
 
 The `-d` or `--data` flag specifies more information sent along with the curl request.
 
-In the example, the data object is a list of key value pairs in JSON format. This follows the [JSON RPC 2.0 specification ](https://www.jsonrpc.org/specification)which requires the four specific keys seen here.
+In the example, the data object is a list of key value pairs in JSON format. This follows the [JSON RPC 2.0 specification](https://www.jsonrpc.org/specification) which requires the four specific keys seen here.
 
 The `method`, `params`, and `id` values are modifiable.
 

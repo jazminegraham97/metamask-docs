@@ -5,8 +5,8 @@ sidebar_position: 1
 
 # About Snaps
 
-MetaMask Snaps is an open source system that allows anyone to safely extend the functionality of
-MetaMask, creating new web3 end user experiences.
+MetaMask Snaps is an open source system that allows anyone to safely create a mini app that runs inside the MetaMask extension,
+enabling new web3 end user experiences.
 For example, a Snap can add support for different blockchain networks, add custom account types, or
 provide additional functionality using its own APIs.
 This allows MetaMask to be used with a far more diverse set of protocols, dapps, and services.
@@ -16,9 +16,9 @@ The following diagram outlines the high-level architecture of the Snaps system:
 ![Snaps architecture diagram](../../assets/snaps-architecture.png)
 
 The following diagram illustrates how Snaps can [derive non-EVM keys](../../features/non-evm-networks.md) using
-[`snap_getBip32Entropy`](../../reference/snaps-api.md#snap_getbip32entropy),
-[`snap_getBip44Entropy`](../../reference/snaps-api.md#snap_getbip44entropy), and
-[`snap_getEntropy`](../../reference/snaps-api.md#snap_getentropy):
+[`snap_getBip32Entropy`](../../reference/snaps-api/snap_getbip32entropy.mdx),
+[`snap_getBip44Entropy`](../../reference/snaps-api/snap_getbip44entropy.mdx), and
+[`snap_getEntropy`](../../reference/snaps-api/snap_getentropy.mdx):
 
 ![Snaps get entropy diagram](../../assets/snaps-getentropy.png)
 
@@ -44,12 +44,12 @@ of MetaMask core unless given permission to do so.
 
 ### APIs
 
-A Snap can communicate with MetaMask using the [Snaps API](../../reference/snaps-api.md) and some
-[MetaMask JSON-RPC API](/wallet/reference/json-rpc-api) methods.
+A Snap can communicate with MetaMask using the [Snaps API](../../reference/snaps-api) and some
+[MetaMask JSON-RPC API](/metamask-connect/evm/reference/json-rpc-api) methods.
 The Snaps API allows Snaps to extend or modify the functionality of MetaMask, and communicate with
 other Snaps.
 
-Dapps can use the [Wallet API for Snaps](../../reference/wallet-api-for-snaps.md) to install and
+Dapps can use the [Wallet API for Snaps](../../reference/snaps-api/wallet_invokesnap.mdx) to install and
 communicate with Snaps.
 
 A Snap can implement its own custom JSON-RPC API to communicate with dapps and other Snaps.
@@ -69,13 +69,15 @@ For each Snap, the user can:
 A Snap can also display a [home page](../../features/custom-ui/home-pages.md) within MetaMask that
 the user can access using the Snaps menu.
 
-Other than the settings page and home page, a Snap can
-[modify the MetaMask UI](../../features/custom-ui/index.md) only
-by displaying [dialogs](../../features/custom-ui/dialogs.md),
-[transaction insights](../../reference/entry-points.md#ontransaction), or
-[signature insights](../../features/signature-insights.md).
+Other than the settings page and home page, a Snap can modify the MetaMask UI by displaying
+[custom UI](../../features/custom-ui/index.md) in
+[dialogs](../../features/custom-ui/dialogs.md),
+[transaction insights](../../features/transaction-insights.md),
+[signature insights](../../features/signature-insights.md), and
+[notifications (expanded view)](../../features/notifications.md#expanded-view).
+An [account management Snap](../../features/custom-evm-accounts/index.md) can also modify the MetaMask UI by leveraging native account UX.
 
-This means that many Snaps must use companion dapps and custom JSON-RPC API methods to
+Many Snaps must use companion dapps and custom JSON-RPC API methods to
 present data to the user.
 
 :::note

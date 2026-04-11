@@ -1,0 +1,328 @@
+[data-theme='light'] .DocSearch {
+  /* --docsearch-primary-color: var(--ifm-color-primary); */
+  /* --docsearch-text-color: var(--ifm-font-color-base); */
+  --docsearch-muted-color: var(--general-gray-mid);
+  --docsearch-container-background: rgba(10, 10, 10, 0.9);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--general-gray-light);
+  --docsearch-primary-color: var(--general-black);
+  --docsearch-searchbox-shadow: 0 0 0 0.2rem var(--docsearch-primary-color);
+  --docsearch-highlight-color: var(--general-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-white);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-color-white);
+
+  // Light mode: keep text/icons dark; use a light highlight background for hover/selection.
+  // We use !important here because DocSearch styles and our shared rules below
+  // set a dark background for hover/selection.
+  .DocSearch-Hit[aria-selected='true'] a,
+  .DocSearch-Hit[aria-selected='false'] a:hover {
+    background-color: var(--docsearch-hit-highlight-color) !important;
+    color: var(--general-black) !important;
+  }
+
+  .DocSearch-Hit[aria-selected='true'] a :is(.DocSearch-Hit-title, .DocSearch-Hit-path, .DocSearch-Hit-text),
+  .DocSearch-Hit[aria-selected='false'] a:hover :is(.DocSearch-Hit-title, .DocSearch-Hit-path, .DocSearch-Hit-text) {
+    color: var(--general-black) !important;
+  }
+}
+
+[data-theme='dark'] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--general-gray-mid);
+  --docsearch-container-background: rgba(10, 10, 10, 0.9);
+  /* Modal */
+  --docsearch-modal-background: var(--general-gray-dark);
+  /* Search box */
+  --docsearch-searchbox-background: var(--general-gray-dark);
+  --docsearch-searchbox-focus-background: var(--general-black-mid);
+  --docsearch-searchbox-shadow: 0 0 0 0.2rem var(--general-black-light);
+  --docsearch-highlight-color: var(--general-white);
+
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--general-black-light);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+}
+
+.DocSearch {
+  --docsearch-spacing: 1.2rem;
+  --docsearch-modal-width: 74.5rem;
+  --docsearch-modal-height: 60rem;
+  --docsearch-searchbox-height: 5.6rem;
+  --docsearch-footer-height: 4.4rem;
+
+  .DocSearch-Button {
+    border: 1px solid var(--docsearch-primary-color);
+    background-color: var(--docsearch-searchbox-focus-background);
+    box-shadow: 0 0 0 0.1rem var(--docsearch-primary-color);
+  }
+
+  .DocSearch-Button:hover {
+    box-shadow: 0 0 0 0.2rem var(--docsearch-primary-color);
+  }
+
+  .DocSearch-Button:focus-visible {
+    box-shadow: 0 0 0 0.3rem var(--docsearch-primary-color);
+  }
+
+  .DocSearch-Modal {
+    border-radius: 0;
+    margin: 0;
+
+    @include bp('tablet') {
+      margin: 6rem auto auto;
+      border-radius: 0.8rem;
+    }
+  }
+
+  .DocSearch-Dropdown-Container {
+    width: calc(var(--docsearch-modal-width) - var(--docsearch-spacing) * 2);
+    overflow: hidden;
+
+    @include bp-max('tablet') {
+      max-width: 100%;
+    }
+  }
+
+  .DocSearch-Form {
+    border-radius: 0.4rem;
+  }
+
+  // Make "Clear the query" less prominent: icon-only clear affordance.
+  // Keeps the accessible label/title intact, but visually renders a small "×" icon.
+  .DocSearch-Clear {
+    font-size: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+  }
+
+  .DocSearch-Clear::before {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--docsearch-icon-color);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 3h6l1 2h5v2H3V5h5l1-2Zm1 6h2v10h-2V9Zm4 0h2v10h-2V9ZM7 9h2v10H7V9Zm-1 12h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 3h6l1 2h5v2H3V5h5l1-2Zm1 6h2v10h-2V9Zm4 0h2v10h-2V9ZM7 9h2v10H7V9Zm-1 12h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+
+  .DocSearch-Clear:hover::before {
+    background-color: var(--docsearch-highlight-color);
+  }
+
+  .DocSearch-Input {
+    font-size: 2rem;
+    font-weight: 400;
+
+    &::placeholder {
+      color: var(--docsearch-muted-color);
+      font-weight: 300;
+      opacity: 0.75;
+    }
+  }
+
+  .DocSearch-Help {
+    font-size: 1.4rem;
+  }
+
+  .DocSearch-Hit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .DocSearch-Label {
+    font-size: 1.2rem;
+  }
+
+  .DocSearch-ErrorScreen,
+  .DocSearch-NoResults,
+  .DocSearch-StartScreen {
+    padding: 3.6rem 0;
+  }
+
+  // No results: render the query on its own line to avoid overlap when wrapping
+  .DocSearch-NoResults .DocSearch-Title {
+    line-height: 1.2;
+  }
+
+  .DocSearch-NoResults .DocSearch-Title > strong {
+    display: block;
+    margin-top: 0.2em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .DocSearch-Dropdown {
+    margin-top: 0.2rem;
+  }
+
+  .DocSearch-Hit-source {
+    font-weight: 500;
+  }
+
+  .DocSearch-Hit[aria-selected='true'],
+  .DocSearch-Hit[aria-selected='false'] {
+    a {
+      text-decoration: none;
+
+      @include bp('tablet') {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+      }
+
+      &:hover {
+        text-decoration: none;
+        background-color: var(--general-black);
+
+        .DocSearch-Hit-title,
+        .DocSearch-Hit-path {
+          color: var(--docsearch-hit-active-color);
+        }
+      }
+    }
+
+    mark {
+      text-decoration-thickness: 0.1rem;
+      text-underline-offset: 0.4rem;
+    }
+  }
+
+  .DocSearch-Hit[aria-selected='true'] a {
+    background-color: var(--general-black);
+
+    .DocSearch-Hit-title,
+    .DocSearch-Hit-path {
+      color: var(--docsearch-hit-active-color);
+    }
+  }
+
+  .DocSearch-HitsFooter a {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.4rem;
+
+    &:hover {
+      color: var(--docsearch-highlight-color);
+    }
+  }
+}
+
+.main-wrapper {
+  .search-page-wrapper & {
+    margin: auto;
+
+    .container {
+      width: calc(100% - var(--page-padding-x) * 2);
+
+      @include bp('tablet') {
+        margin: 0 !important;
+        width: 100%;
+      }
+    }
+
+    @include bp('tablet') {
+      max-width: 92.5rem;
+      min-width: 91.5rem;
+    }
+
+    .col--8 {
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      @include bp('tablet') {
+        font-size: 1.6rem;
+      }
+    }
+
+    .margin-vert--lg {
+      h1 {
+        padding: 3rem 0 2rem;
+
+        @include bp('tablet') {
+          padding: 6.5rem 0 3rem;
+        }
+      }
+    }
+
+    form input {
+      font-size: 1.6rem;
+      border: 1px solid var(--ifm-toc-border-color);
+      background: transparent;
+
+      html[data-theme='dark'] & {
+        background-color: var(--general-gray-dark);
+      }
+
+      &::placeholder {
+        font-size: 1.6rem;
+      }
+
+      &:focus {
+        border: 1px solid var(--search-input-focus);
+      }
+    }
+
+    main {
+      margin-top: 4rem;
+    }
+
+    article {
+      padding: 2rem 0;
+    }
+
+    h2 {
+      a {
+        color: var(--search-item-link);
+        @extend h3;
+
+        &:hover {
+          color: var(--search-item-link-hover);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .breadcrumbs {
+      &__item:not(:last-child):after {
+        opacity: 1;
+        height: 1rem;
+        width: 0.7rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+
+    .breadcrumbs,
+    p {
+      font-size: 1.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .search-result-match {
+      background-color: var(--ifm-code-background);
+    }
+  }
+}

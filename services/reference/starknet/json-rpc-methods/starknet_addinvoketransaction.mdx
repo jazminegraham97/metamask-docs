@@ -1,9 +1,12 @@
 ---
-title: "starknet_addInvokeTransaction"
+title: starknet_addInvokeTransaction
+sidebar_label: starknet_addInvokeTransaction
 ---
 
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
+
+# `starknet_addInvokeTransaction`
 
 Submits a new invoke transaction.
 
@@ -19,12 +22,12 @@ The result of the transaction submission, containing `transaction_hash`, the has
 
 ## Example
 
-Replace `<YOUR-API-KEY>` with an API key from your [Infura dashboard](https://infura.io/dashboard).
+Replace `<YOUR-API-KEY>` with an API key from your [MetaMask Developer dashboard](https://developer.metamask.io/).
 
 ### Request
 
 <Tabs>
-<TabItem value="cURL">
+<TabItem value="curl">
 
 ```bash
 curl https://starknet-mainnet.infura.io/v3/<YOUR-API-KEY> \
@@ -55,7 +58,7 @@ curl https://starknet-mainnet.infura.io/v3/<YOUR-API-KEY> \
         "nonce": "0x7",
         "resource_bounds": {
           "l1_gas": "0x28ed6103d0000",
-          "l2_gas": "0x28ed6103d0000",
+          "l2_gas": "0x28ed6103d0000"
         },
         "tip": "0x0",
         "paymaster_data": [],

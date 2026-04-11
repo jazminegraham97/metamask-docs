@@ -12,8 +12,8 @@ Snaps can [request the following permissions](../how-to/request-permissions.md).
 
 ## RPC API permissions
 
-You must request permission to call [Snaps API methods](snaps-api.md).
-For example, to request to call [`snap_dialog`](snaps-api.md#snap_dialog), add the following to the
+You must request permission to call [Snaps API methods](snaps-api/index.md).
+For example, to request to call [`snap_dialog`](snaps-api/snap_dialog.mdx), add the following to the
 manifest file:
 
 ```json title="snap.manifest.json"
@@ -74,7 +74,7 @@ Specify this permission in the manifest file as follows:
 
 To communicate with a node using MetaMask, a Snap must request the `endowment:ethereum-provider` permission.
 This permission exposes the `ethereum` global to the Snap execution environment, allowing Snaps to
-call some [MetaMask JSON-RPC API](/wallet/reference/json-rpc-api) methods.
+call some [MetaMask JSON-RPC API](/metamask-connect/evm/reference/json-rpc-api) methods.
 This global is an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) provider.
 
 Specify this permission in the manifest file as follows:
@@ -87,7 +87,7 @@ Specify this permission in the manifest file as follows:
 
 :::note
 The `ethereum` global available to Snaps has fewer capabilities than `window.ethereum` for dapps.
-See the [list of methods](../learn/about-snaps/apis.md#metamask-json-rpc-api) not available to Snaps.
+See the [list of methods](../learn/about-snaps/apis.md#snap-requests) not available to Snaps.
 :::
 
 ### `endowment:page-home`
@@ -255,6 +255,28 @@ If you specify `allowedOrigins`, you should not specify `dapps` or `snaps`.
 If you want to grant a dapp or Snap an automatic connection to your Snap, skipping the need for
 users to confirm a connection, you can use [`initialConnections`](#initial-connections).
 
+### `endowment:signature-insight`
+
+To provide [signature insights](../features/signature-insights.md), a Snap must request the
+`endowment:signature-insight` permission.
+This permission grants a Snap read-only access to raw signature payloads, before they're accepted
+for signing by the user, by exposing the [`onSignature`](./entry-points.md#onsignature) entry point.
+
+This permission requires an object with an `allowSignatureOrigin` property to signal if the Snap
+should pass the `signatureOrigin` property as part of the `onSignature` parameters.
+This property represents the signature initiator origin.
+The default is `false`.
+
+Specify this permission in the manifest file as follows:
+
+```json title="snap.manifest.json"
+"initialPermissions": {
+  "endowment:signature-insight": {
+    "allowSignatureOrigin": true
+  }
+},
+```
+
 ### `endowment:transaction-insight`
 
 To provide [transaction insights](../features/transaction-insights.md) before a user signs a
@@ -280,31 +302,6 @@ Specify this permission in the manifest file as follows:
     "allowTransactionOrigin": true
   }
 }
-```
-
-### `endowment:signature-insight`
-
-:::flaskOnly
-:::
-
-To provide [signature insights](../features/signature-insights.md), a Snap must request the
-`endowment:signature-insight` permission.
-This permission grants a Snap read-only access to raw signature payloads, before they're accepted
-for signing by the user, by exposing the [`onSignature`](./entry-points.md#onsignature) entry point.
-
-This permission requires an object with an `allowSignatureOrigin` property to signal if the Snap
-should pass the `signatureOrigin` property as part of the `onSignature` parameters.
-This property represents the signature initiator origin.
-The default is `false`.
-
-Specify this permission in the manifest file as follows:
-
-```json title="snap.manifest.json"
-"initialPermissions": {
-  "endowment:signature-insight": {
-    "allowSignatureOrigin": true
-  }
-},
 ```
 
 ### `endowment:webassembly`
@@ -351,8 +348,8 @@ The following endowments accept this caveat:
 
 ### `eth_accounts`
 
-A Snap can request permission to call the [`eth_accounts`](/wallet/reference/eth_accounts) MetaMask
-JSON-RPC API method by calling [`eth_requestAccounts`](/wallet/reference/eth_requestaccounts).
+A Snap can request permission to call the [`eth_accounts`](/metamask-connect/evm/reference/json-rpc-api) MetaMask
+JSON-RPC API method by calling [`eth_requestAccounts`](/metamask-connect/evm/reference/json-rpc-api).
 Calling `eth_requestAccounts` requires the
 [`endowment:ethereum-provider`](#endowmentethereum-provider) permission:
 
@@ -376,7 +373,7 @@ await ethereum.request({ method: "eth_requestAccounts" })
 </Tabs>
 
 You can check the presence of the permission by calling
-[`wallet_getPermissions`](/wallet/reference/wallet_getpermissions).
+[`wallet_getPermissions`](/metamask-connect/evm/reference/json-rpc-api).
 If the permission is present, the result contains a permission with a `parentCapability` of `eth_accounts`.
 The permission contains a `restrictReturnedAccounts` caveat, an array of all the accounts the user
 allows for this Snap.
@@ -403,7 +400,7 @@ The user can revoke this permission by going to the Snap's settings under **Snap
 
 A Snap can authorize specific dapps or Snaps to automatically connect,
 skipping the need for users to manually confirm a connection when the dapp or Snap calls
-[`wallet_requestSnaps`](../reference/wallet-api-for-snaps.md#wallet_requestsnaps).
+[`wallet_requestSnaps`](../reference/snaps-api/wallet_requestsnaps.mdx).
 
 The following is an example of specifying `initialConnections` for a dapp:
 

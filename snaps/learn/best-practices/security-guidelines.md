@@ -15,8 +15,6 @@ The following are guidelines for [managing permissions](../../how-to/request-per
 - **Minimum permissions** - Follow the principle of least authority by only adding the minimum
   permissions needed by your Snap in the manifest file.
   Before publishing your Snap, check the permissions again and remove any unused permissions.
-  You can validate your permissions using the [Snaps Simulator Manifest
-  Validator](https://metamask.github.io/snaps/snaps-simulator/staging/#/manifest).
 
 - **Minimum RPC access** - When adding the [`endowment:rpc`](../../reference/permissions.md#endowmentrpc)
   permission for Snaps or dapps, ask yourself if both are necessary.
@@ -66,7 +64,7 @@ The following are guidelines for user notifications, dialogs, and authorizations
 
 - **Limit access to sensitive methods** - When building a Snap with sensitive RPC methods,
   use a companion dapp as an "admin interface" to interact with your Snap's sensitive methods.
-  There are two ways to do this:
+  You can do this in two ways:
 
   1. Restrict the [`endowment:rpc`](../../reference/permissions.md#endowmentrpc) permission to specific
      URLs using the `allowedOrigins` caveat.
@@ -110,7 +108,7 @@ user IPs, emails, passwords, and private keys:
 
 - **Private keys** - Avoid retrieving the user's private key from the Snap unless
   absolutely necessary, such as to sign a transaction.
-  If you only need the user's public key, use [`snap_getBip32PublicKey`](../../reference/snaps-api.md#snap_getbip32publickey)
+  If you only need the user's public key, use [`snap_getBip32PublicKey`](../../reference/snaps-api/snap_getbip32publickey.mdx)
   instead of deriving it from the private key.
   Never return the private key in an RPC method to a dapp or another Snap.
   To give users a way to view their private key, display it in a dialog.
@@ -119,7 +117,7 @@ user IPs, emails, passwords, and private keys:
   For example, you might have a method that intends to return sensitive information only in specific
   cases, but due to a typo or bad logic, it returns the information incorrectly, leaking data.
   Even if you have a legitimate reason for allowing a user to export sensitive information, you
-  should prevent that information from being revealed carelessly (similar to how MetaMask makes it
+  should make that information difficult to reveal (similar to how MetaMask makes it
   difficult to reveal a Secret Recovery Phrase and for an observer looking over a user's shoulder to
   see it).
 
@@ -149,13 +147,13 @@ The following are guidelines for validating RPC parameters and handling values:
   mislead the user.
   For example:
 
-  <img src={require("../../assets/copyable-example-1.png").default} alt="Example not using copyable with Markdown rendering" style={{border: "1px solid #DCDCDC"}} />
+  <img src={require("../../assets/copyable-example-1.png").default} alt="Example not using copyable with Markdown rendering" class="appScreen" />
 
   The special characters `*` and `_` render Markdown formatting, so what the user sees does not
   match the content.
   To avoid this, use `copyable` instead:
 
-  <img src={require("../../assets/copyable-example-2.png").default} alt="Example using copyable with clean rendering" style={{border: "1px solid #DCDCDC"}} />
+  <img src={require("../../assets/copyable-example-2.png").default} alt="Example using copyable with clean rendering" class="appScreen" />
 
   `copyable` does not render Markdown and has the added benefit that the user can select to copy the content.
   Also, the formatting provides a visual delineator to separate arbitrary input or fields from user
@@ -176,9 +174,9 @@ The following are guidelines for validating RPC parameters and handling values:
 Avoid using the following deprecated methods:
 
 - `wallet_enable`, which is deprecated in favor of
-  [`wallet_requestSnaps`](../../reference/wallet-api-for-snaps.md#wallet_requestsnaps).
+  [`wallet_requestSnaps`](../../reference/snaps-api/wallet_requestsnaps.mdx).
 
-- `snap_confirm`, which is deprecated in favor of [`snap_dialog`](../../reference/snaps-api.md#snap_dialog).
+- `snap_confirm`, which is deprecated in favor of [`snap_dialog`](../../reference/snaps-api/snap_dialog.mdx).
 
 - `endowment:long-running`, which is deprecated for MetaMask stable but still allowed in MetaMask Flask.
 
@@ -201,7 +199,7 @@ The following are coding security tips and warnings:
   Do not use insufficient hashing algorithms such as `md5` or `sha2`.
   Do not roll your own cryptography or use custom or unproven cryptography methods or libraries.
 
-  We recommend using [`snap_getEntropy`](../../reference/snaps-api.md#snap_getentropy) for entropy, the
+  We recommend using [`snap_getEntropy`](../../reference/snaps-api/snap_getentropy.mdx) for entropy, the
   built-in [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) or
   [Noble cryptography libraries](https://paulmillr.com/noble/), and safe hashing algorithms such as `sha256`.
   Choose audited, widely used libraries over obscure, untested implementations.
@@ -214,7 +212,7 @@ The following are guidelines for securing your supply chain:
   to exact versions.
   If you don't, a supply chain attacker can trick you into including a malicious version of a
   package instead of the original, legitimate one.
-  You can quickly check the status of your dependencies by running `npm audit` in your Snap directory.
+  You can check the status of your dependencies by running `npm audit` in your Snap directory.
 
 - **Secure your stack** - Your Snap companion dapp and any remote servers are part of your security model.
   We recommend using [LavaMoat](https://github.com/LavaMoat/LavaMoat) to secure relevant parts of

@@ -1,5 +1,5 @@
 ---
-description: Solve common issues.
+description: Solve common issues encountered by Snap developers.
 sidebar_position: 1
 ---
 
@@ -18,10 +18,10 @@ If you encounter any issues that you can't solve on your own, please
 Because [Secure ECMAScript (SES)](../../learn/about-snaps/execution-environment.md) adds additional restrictions
 on the JavaScript runtime on top of strict mode, code that executes normally under strict mode might
 not under SES.
-[`yarn mm-snap build`](../../reference/cli/subcommands.md#b-build) by default attempts to execute a
+[`yarn mm-snap build`](../../reference/cli.md#b-build) by default attempts to execute a
 Snap in a stubbed SES environment.
 You can also disable this behavior and run the evaluation step separately using
-[`yarn mm-snap eval`](../../reference/cli/subcommands.md#e-eval).
+[`yarn mm-snap eval`](../../reference/cli.md#e-eval).
 If an error is thrown during this step, it's likely due to a SES incompatibility, and you must fix
 the issues manually.
 These incompatibilities tend to occur in dependencies.
@@ -34,7 +34,7 @@ If the problem is in a dependency, you can try a different version or to fix the
 using tools such as [`patch-package`](https://npmjs.com/package/patch-package) (see how to
 [patch dependencies](#patch-dependencies)) or by modifying the bundle file directly.
 
-To give you an idea of a common error and how to fix it, "sloppily" declared variables (i.e.
+To give you an idea of a common error and how to fix it, "sloppily" declared variables (that is,
 assigning to a new variable without an explicit variable declaration) are forbidden in strict mode,
 and therefore in SES as well.
 If you get an error during the `eval` step that says something like `variableName is not defined`,
@@ -43,9 +43,9 @@ simply prepending `var variableName;` to your Snap bundle may solve the problem.
 `yarn mm-snap build` automatically handles that one.)
 
 :::caution
-Run [`yarn mm-snap manifest --fix`](../../reference/cli/subcommands.md#m-manifest) if you modified
+Run [`yarn mm-snap manifest --fix`](../../reference/cli.md#m-manifest) if you modified
 your Snap bundle after building.
-Otherwise your manifest `shasum` value won't be correct, and attempting to install your Snap fails.
+Otherwise, your manifest `shasum` value won't be correct, and attempting to install your Snap fails.
 :::
 
 ### Use other build tools
@@ -60,9 +60,9 @@ plugins for several other build systems:
 For examples on how to set up these build systems yourself, see the
 [examples](https://github.com/MetaMask/snaps/tree/main/packages/examples).
 
-We recommend running [`yarn mm-snap manifest --fix`](../../reference/cli/subcommands.md#m-manifest)
+We recommend running [`yarn mm-snap manifest --fix`](../../reference/cli.md#m-manifest)
 after creating your bundle to make sure your manifest `shasum` value is correct.
-You might also benefit from running [`yarn mm-snap eval`](../../reference/cli/subcommands.md#e-eval)
+You might also benefit from running [`yarn mm-snap eval`](../../reference/cli.md#e-eval)
 to detect any SES issues up front.
 
 ## Patch dependencies
@@ -94,7 +94,7 @@ Then add a postinstall script to your `package.json`:
 Now you can make changes to your dependencies inside `node_modules` and run
 `yarn patch-package package-name` to save the changes as a patch.
 This creates a `.patch` file containing your dependency patch.
-These patches can be committed to your Git repository and are replayed when you re-install your dependencies.
+These patches can be committed to your Git repository and are replayed when you reinstall your dependencies.
 
 ### Patch the use of `XMLHttpRequest`
 
@@ -106,13 +106,13 @@ The following are examples of popular libraries that use `XMLHttpRequest` and ar
 compatible with the Snaps execution environment.
 This section also describes patching strategies for fixing dependencies that try to use these libraries.
 
-#### cross-fetch
+#### `cross-fetch`
 
 `cross-fetch` is a popular library used for cross-platform access to the `fetch` API across multiple
 environments.
 Under the hood, however, the library uses `XMLHttpRequest` and thus causes issues when used in a Snap.
 
-You can easily patch this issue using `patch-package`.
+You can patch this issue using `patch-package`.
 Open `node_modules/cross-fetch/browser-ponyfill.js` and find the following lines near the bottom of
 the file:
 
@@ -158,7 +158,7 @@ index f216aa3..6b3263b 100644
 Using either of these methods allows your dependencies to access the `fetch` API correctly and
 `cross-fetch` compatible with the Snaps execution environment.
 
-#### axios
+#### `axios`
 
 `axios` is a popular networking library that uses `XMLHttpRequest` under the hood.
 

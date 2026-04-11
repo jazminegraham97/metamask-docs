@@ -13,7 +13,7 @@ A request will fail if it does not have a valid API key appended to the request 
 
 :::
 
-Select the API key in the Infura dashboard to view the key's details. The API key to include in your requests can be
+Select the API key in the dashboard to view the key's details. The API key to include in your requests can be
 copied at the top of the page.
 
 Apply the principle of least privilege. Add only the endpoints that you plan to use, and then use the other
@@ -34,7 +34,7 @@ secure your Infura API key:
   forums. This is equivalent to giving away your password.
 
 - **Use environment variables.** When developing locally or deploying your application, store your
-  [API key in environment variables](../../../../../services/how-to/javascript-dotenv) instead of hardcoding it into
+  [API key in environment variables](/services/how-to/javascript-dotenv) instead of hardcoding it into
   your application. This prevents the API key from being exposed in your codebase.
 
 - **Limit usage.** Infura allows you to [set daily request limits on your API key](set-rate-limits.md). Setting a limit can

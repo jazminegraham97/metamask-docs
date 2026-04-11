@@ -41,7 +41,7 @@ npm install web3
 
 ### 3. Set up the script
 
-Create a file called `retrieveBalance.js`. At the top of file, add the following lines to import the web3.js library and connect to the Infura HTTPS endpoint:
+Create a file called `retrieveBalance.js`. At the top of the file, add the following lines to import the web3.js library and connect to the Infura HTTPS endpoint:
 
 ```javascript
 const { Web3 } = require("web3")
@@ -109,7 +109,7 @@ Create the below `async` function `getTokenBalance` that accomplishes this by in
 
 ```javascript
 async function getTokenBalance() {
-  const result = await.contract.methods.balanceOf(tokenHolder).call();
+  const result = await contract.methods.balanceOf(tokenHolder).call();
   console.log(result)
 }
 
@@ -118,7 +118,7 @@ getTokenBalance();
 
 ### 7. Convert the token units
 
-By default, calling `balanceOf` returns the balance value in `wei`, which is the smallest unit in Ethereum, equal to 0.000000000000000001 Ether (10<sup>-18</sup>).
+By default, calling `balanceOf` returns the balance value in wei, which is the smallest unit in Ethereum, equal to 0.000000000000000001 Ether.
 
 Use `web3.utils.fromWei(result, "ether")` to get the actual number of DAI tokens, by adding the following line to the `async` function:
 

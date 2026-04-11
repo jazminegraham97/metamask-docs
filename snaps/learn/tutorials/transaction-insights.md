@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem";
 This tutorial walks you through creating a Snap that calculates the percentage of gas fees they would 
 pay for their transaction.
 
-It gets the current gas price by calling the [`eth_gasPrice`](/wallet/reference/eth_gasPrice) RPC
+It gets the current gas price by calling the [`eth_gasPrice`](/metamask-connect/evm/reference/json-rpc-api) RPC
 method using the global Ethereum provider made available to Snaps, and displays this as a percentage 
 of gas fees in a tab in MetaMask's transaction confirmation window.
 
@@ -83,7 +83,7 @@ mkdir packages/snap/images
 
 Download
 [this `gas.svg` icon file](https://raw.githubusercontent.com/Montoya/gas-fee-snap/main/packages/snap/images/gas.svg)
-into that `ìmages` folder.  
+into that `images` folder.  
 
 <details>
   <summary>Icon attribution</summary>
@@ -301,11 +301,13 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
 </TabItem>
 </Tabs>
 
-:::tip
+:::note Notes
+
 If you have previously developed a dapp, you're likely familiar with accessing the Ethereum provider 
 using `window.ethereum`. In a Snap, the `window` object is not available. Instead, when you request 
 the `endowment:ethereum-provider` permission, your Snap is granted access to the 
 [`ethereum` global object](../about-snaps/apis.md#snap-requests).
+
 :::
 
 ### 5. Build and test your Snap
@@ -349,7 +351,7 @@ Switching to the tab activates the [`onTransaction`](../../reference/entry-point
 entry point of your Snap and displays the percentage of gas fees in the transaction insights UI:
 
 <p align="center">
-<img src={require('../../assets/transaction-insights.png').default} alt="Transaction insights UI" width="400px" style={{border: '1px solid #DCDCDC'}} />
+<img src={require('../../assets/transaction-insights.png').default} alt="Transaction insights UI" width="400px" class="appScreen" />
 </p>
 
 :::warning

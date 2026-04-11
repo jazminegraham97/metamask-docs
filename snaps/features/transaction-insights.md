@@ -31,7 +31,7 @@ permission object, and set it to `true`:
 
 ```json title="snap.manifest.json"
 "initialPermissions": {
-  "endowment:signature-insight": {
+  "endowment:transaction-insight": {
     "allowTransactionOrigin": true
   }
 }
@@ -40,7 +40,8 @@ permission object, and set it to `true`:
 ### 2. Implement the `onTransaction` entry point
 
 Expose an [`onTransaction`](../reference/entry-points.md#ontransaction) entry point, which receives
-a raw unsigned transaction payload, the chain ID, and the optional transaction origin.
+a raw unsigned transaction payload, the chain ID, and the optional transaction origin,
+and returns [custom UI](custom-ui/index.md) content.
 When a user submits a transaction using the MetaMask extension, MetaMask calls the `onTransaction`
 handler method.
 
@@ -99,11 +100,10 @@ export const onTransaction: OnTransactionHandler = async ({
 </TabItem>
 </Tabs>
 
-
 The Snap tab in the transaction confirmation window displays the transaction insights:
 
 <p align="center">
-<img src={require("../assets/transaction-insights-window.png").default} alt="Transaction insights" width="360px" style={{border: "1px solid #DCDCDC"}} />
+<img src={require("../assets/transaction-insights-window.png").default} alt="Transaction insights" width="360px" class="appScreen" />
 </p>
 
 #### Transaction severity level

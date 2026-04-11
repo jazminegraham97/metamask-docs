@@ -8,7 +8,7 @@ on:
 
 jobs:
   case:
-    name: Check for licences not being allowed
+    name: Check for licenses not being allowed
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,9 +16,9 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: Dependency review
-        uses: ConsenSys/docs-gha/dependency-review@main
+        uses: ConsenSys/github-actions/js-dependency-review@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

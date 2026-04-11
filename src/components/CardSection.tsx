@@ -1,49 +1,72 @@
-import React from "react";
-import Card, { type CardItem } from "@site/src/components/Card";
-import styles from "./cardsection.module.css";
+import clsx from 'clsx'
+import { CSSProperties, JSX } from 'react'
+import { useColorMode } from '@docusaurus/theme-common'
+import Card, { CardItem } from '@site/src/components/Card'
 
-const CardList: CardItem[] = [
-  {
-    title: "📱 Integrate your dapp with the MetaMask wallet",
-    link: "/wallet",
-    description: (
-      <>
-        Integrate your dapp with MetaMask using the Wallet API. You can interact
-        with your users&apos; Ethereum accounts from multiple dapp platforms.
-      </>
-    ),
-  },
-  {
-    title: "🛠️ Extend the functionality of MetaMask using Snaps",
-    link: "/snaps",
-    description: (
-      <>
-        Extend the functionality of MetaMask using Snaps. You can create a Snap
-        to add support for custom networks, account types, APIs, and more.
-      </>
-    ),
-  },
-  {
-    title: "📐 Build and scale your dapp using services",
-    link: "/services",
-    description: (
-      <>
-        Build and scale your dapp or Snap using services provided by MetaMask
-        and Infura. This includes APIs that optimize essential development
-        tasks.
-      </>
-    ),
-  },
-];
+import styles from './CardSection.module.scss'
 
-export default function CardSection(): JSX.Element {
+type CardSectionProps = {
+  title?: string
+  description?: string
+  cards: CardItem[]
+  colorPalette?: string
+}
+
+export default function CardSection({
+  title,
+  description,
+  cards,
+  colorPalette,
+}: CardSectionProps): JSX.Element {
+  const { colorMode } = useColorMode()
+  const theme = colorMode
+
   return (
-    <section className="container margin-top--sm margin-bottom--lg">
-      <div className={styles.row}>
-        {CardList.map((props, idx) => (
-          <Card key={idx} {...props} />
-        ))}
+    <section className={styles.wrapper}>
+      <div className="container">
+        <div className={styles['grid-wrapper']}>
+          <div className={styles['grid-col-center']}>
+            <div
+              className={clsx(
+                styles['section-grid'],
+                !title && !description && styles['cards-only']
+              )}
+              style={
+                colorPalette
+                  ? ({
+                      '--color-palette': `var(--developer-${colorPalette})`,
+                    } as CSSProperties)
+                  : {}
+              }>
+              {/* Title and Description Column */}
+              {(title || description) && (
+                <div className={styles['content-column']}>
+                  <div className={styles.header}>
+                    {title && <h2>{title}</h2>}
+                    {description && <p>{description}</p>}
+                  </div>
+                </div>
+              )}
+
+              {/* Cards Columns */}
+              <div className={styles['cards-wrapper']}>
+                {cards.map(({ title, description, href, buttonIcon, leadIcon }, index) => (
+                  <div key={index} className={styles['card-column']}>
+                    <Card
+                      title={title}
+                      description={description}
+                      href={href}
+                      theme={theme}
+                      buttonIcon={buttonIcon}
+                      leadIcon={leadIcon}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  );
+  )
 }

@@ -47,7 +47,7 @@ This example has been written for web3js v4.x. It may not work for earlier versi
 
 ### 3. Set up the script
 
-Create a file called `retrieveBalance.js`. At the top of file, add the following lines to import the web3.js library and connect to the Infura HTTPS endpoint:
+Create a file called `retrieveBalance.js`. At the top of the file, add the following lines to import the web3.js library and connect to the Infura HTTPS endpoint:
 
 ```javascript
 const { Web3 } = require("web3")
@@ -63,7 +63,7 @@ Replace `<YOUR-API-KEY>` with your Infura API key.
 
 For ERC-721 NFTs, use the `tokenURI` function, which is part of the ERC-721 standard. This function retrieves a token’s metadata so you can view it. For ERC-1155, use the `uri` method.
 
-Note the `tokenURI` and `uri` methods are optional for contracts. However, these methods are the only standardized on-chain way of seeing NFT metadata without using a third-party API.
+Note the `tokenURI` and `uri` methods are optional for contracts. However, these methods are the only standardized onchain way of seeing NFT metadata without using a third-party API.
 
 Define the ABI for the respective method by adding the following to the script:
 

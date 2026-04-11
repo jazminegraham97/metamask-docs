@@ -2,21 +2,23 @@
 description: Use the Ethers InfuraProvider and Web3Provider methods.
 ---
 
-# Use ethers.js InfuraProvider or Web3Provider
+# Use Ethers.js `InfuraProvider` or `Web3Provider`
 
-In this tutorial, we'll create a simple React app to show the differences between using the ethers.js library's `InfuraProvider` and `Web3Provider` methods to send a transaction.
+In this tutorial, you'll create a simple React app to show the differences between using the
+Ethers.js library's `InfuraProvider` and `Web3Provider` methods to send a transaction.
 
-The key difference we'll highlight is that with Web3Provider you can load the private key from a Web3 wallet (MetaMask in this example), while InfuraProvider needs a wallet created locally with a stored private key.
+The key difference is that with `Web3Provider`, you can load the private key from a web3 wallet
+(for example, MetaMask), while `InfuraProvider` needs a wallet created locally with a stored private key.
 
 This tutorial uses the Sepolia testnet.
 
 ## Prerequisites
 
 - Install [MetaMask](https://metamask.io) and create an Ethereum account for testing purposes.
-- Load Sepolia ETH into your wallet from the [Infura faucet](https://www.infura.io/faucet).
-- [Node.js and NPM installed](https://nodejs.org/en/download/).
+- Load Sepolia ETH into your wallet from the [MetaMask faucet](/developer-tools/faucet).
+- [Node.js and npm installed](https://nodejs.org/en/download/).
 
-You can run the following to confirm that Node and NPM are installed:
+You can run the following to confirm that Node and npm are installed:
 
 ```bash
 node -v && npm -v
@@ -32,7 +34,7 @@ This tutorial was tested using ethers v5.7.2 and Node.js v16.17.0.
 
 ### 1. Create the React app
 
-In the terminal, run the following command to create an app called my-app:
+In the terminal, run the following command to create an app called `my-app`:
 
 ```bash
 npx create-react-app my-app
@@ -58,13 +60,13 @@ Create a `.env` file in your project directory to store the project and Ethereum
 
 ```
 REACT_APP_API_KEY="<YOUR-API-KEY>"
-REACT_APP_PRIVATE_KEY="<Private-Key>"
+REACT_APP_PRIVATE_KEY="<PRIVATE-KEY>"
 ```
 
 Ensure you replace the following values in the `.env` file:
 
 - `<YOUR-API-KEY>` with the API key of the Ethereum project.
-- `<Private-Key>` with the [private key of your Ethereum account](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
+- `<PRIVATE-KEY>` with the [private key of your Ethereum account](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
 
 :::danger
 
@@ -232,7 +234,7 @@ npm start
 
 :::warning
 
-If you are using create-react-app version >=5 you may run into issues building, such as:
+If you are using Create React App version >=5 you may run into issues building, such as:
 
 ```
 Module not found: Error: Can't resolve 'crypto' in 'C:\Users\Username\Projects\testProject\client\node_modules\eth-lib\lib'
@@ -241,7 +243,7 @@ BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules 
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
 ```
 
-This is because NodeJS polyfills are not included in the latest version of create-react-app.
+This is because Node.js polyfills are not included in the latest version of Create React App.
 
 [Follow these instructions to resolve the issue](https://github.com/ChainSafe/web3.js#web3-and-create-react-app).
 
@@ -249,11 +251,15 @@ This is because NodeJS polyfills are not included in the latest version of creat
 
 In the app, notice that when you try and send a transaction using Web3Provider, the app opens a MetaMask instance to transfer your funds.
 
-![](../../../images/metamask.png)
+<p align="center">
+  <img src={require("../../../images/metamask.png").default} />
+</p>
 
 If you transfer funds using the InfuraProvider, then the funds are transferred directly from your app.
 
-![](../../../images/app.png)
+<p align="center">
+  <img src={require("../../../images/app.png").default} />
+</p>
 
 ## Complete code sample
 

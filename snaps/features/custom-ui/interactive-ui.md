@@ -21,27 +21,27 @@ The following interactive UI components are available:
 ## Create an interactive interface
 
 Create an interactive interface using the
-[`snap_createInterface`](../../reference/snaps-api.md#snap_createinterface) method.
+[`snap_createInterface`](../../reference/snaps-api/snap_createinterface.mdx) method.
 This method returns the ID of the created interface.
-You can pass this ID to [`snap_dialog`](../../reference/snaps-api.md#snap_dialog), returned from
+You can pass this ID to [`snap_dialog`](../../reference/snaps-api/snap_dialog.mdx), returned from
 [`onTransaction`](../../reference/entry-points.md#ontransaction), or from
 [`onHomePage`](../../reference/entry-points.md#onhomepage).
 
 If you need to [update the interface](#update-an-interactive-interface) or
-[get its state](#get-an-interactive-interfaces-state) at a future time, you should store its ID in
+[get its state](#get-an-interactive-interfaces-state-and-context) at a future time, you should store its ID in
 the Snap's storage.
 
 ### Add context to an interface
 
 You can optionally add context to an interface by passing a `context` object to the
-[`snap_createInterface`](../../reference/snaps-api.md#snap_createinterface) method.
+[`snap_createInterface`](../../reference/snaps-api/snap_createinterface.mdx) method.
 This object can contain any data you want to pass to the interface.
 This context will be passed to [`onUserInput`](../../reference/entry-points.md#onuserinput) when the user interacts with the interface.
 
 ## Update an interactive interface
 
 To update an interactive interface that is still active, use the
-[`snap_updateInterface`](../../reference/snaps-api.md#snap_updateinterface) method.
+[`snap_updateInterface`](../../reference/snaps-api/snap_updateinterface.mdx) method.
 Pass the ID of the interface to be updated, and the new UI.
 
 Updating an interface can be done as part of the
@@ -58,11 +58,13 @@ The following is an example flow:
 5. Custom logic sends the funds.
 6. `snap_updateInterface` is called again, replacing the whole UI with a success message.
 
-## Get an interactive interface's state
+## Get an interactive interface's state and context
 
-At any point you can retrieve an interactive interface's state.
-To do this, call the [`snap_getInterfaceState`](../../reference/snaps-api.md#snap_getinterfacestate)
-method with the ID of the interface.
+At any point, you can retrieve an interactive interface's state and context.
+To retrieve its state, call the [`snap_getInterfaceState`](../../reference/snaps-api/snap_getinterfacestate.mdx)
+method with the interface ID.
+To retrieve its context, call [`snap_getInterfaceContext`](../../reference/snaps-api/snap_getinterfacecontext.mdx)
+with the interface ID.
 
 ## Example
 

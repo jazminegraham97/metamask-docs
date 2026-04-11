@@ -2,8 +2,6 @@
 description: Call Keyring API methods from your companion dapp.
 sidebar_position: 2
 sidebar_label: Create a companion dapp
-tags:
-  - Keyring API
 ---
 
 # Create an account management companion dapp
@@ -56,7 +54,7 @@ let client = new KeyringSnapRpcClient(snapId, window.ethereum)
 You can now use the `KeyringSnapRpcClient` to invoke
 [Account Management API](../../reference/keyring-api/account-management/index.md) methods on your Snap.
 
-For example, to call [`keyring_listAccounts`](../../reference/keyring-api/account-management/index.md#keyringlist_accounts):
+For example, to call [`keyring_listAccounts`](../../reference/keyring-api/account-management/index.md#keyring_listaccounts):
 
 ```typescript
 const accounts = await client.listAccounts()

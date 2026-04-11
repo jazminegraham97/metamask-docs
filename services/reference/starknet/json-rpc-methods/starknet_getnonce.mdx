@@ -1,9 +1,12 @@
 ---
-title: "starknet_getNonce"
+title: starknet_getNonce
+sidebar_label: starknet_getNonce
 ---
 
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
+
+# `starknet_getNonce`
 
 Returns the nonce associated with the specified contract address in the specified block.
 
@@ -21,12 +24,12 @@ The last nonce used for the requested contract.
 
 ## Example
 
-Replace `<YOUR-API-KEY>` with an API key from your [Infura dashboard](https://infura.io/dashboard).
+Replace `<YOUR-API-KEY>` with an API key from your [MetaMask Developer dashboard](https://developer.metamask.io/).
 
 ### Request
 
 <Tabs>
-<TabItem value="cURL">
+<TabItem value="curl">
 
 ```bash
 curl https://starknet-mainnet.infura.io/v3/<YOUR-API-KEY> \

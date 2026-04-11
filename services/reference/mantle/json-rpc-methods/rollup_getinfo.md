@@ -1,11 +1,11 @@
 ---
-description: rollup_getInfo API method
+description: Returns the information about a node.
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# rollup_getInfo
+# `rollup_getInfo`
 
 Returns the information about a node.
 
@@ -24,16 +24,16 @@ Node information object:
   - `queueIndex`: Index in the canonical transaction chain of the last L1 to L2 message ingested.
   - `index`: Index of the last L2 transaction processed.
   - `verifiedIndex`: Index of the last transaction that was ingested from a batch that was posted
-    the to L1.
+     to L1.
 
 ## Example
 
-Replace `<YOUR-API-KEY>` with an API key from your [Infura dashboard](https://infura.io/dashboard).
+Replace `<YOUR-API-KEY>` with an API key from your [MetaMask Developer dashboard](https://developer.metamask.io/).
 
 ### Request
 
 <Tabs>
-  <TabItem value="cURL" label="cURL" default>
+  <TabItem value="curl" label="curl" default>
 
 ```bash
 curl https://mantle-mainnet.infura.io/v3/<YOUR-API-KEY> \
@@ -46,7 +46,7 @@ curl https://mantle-mainnet.infura.io/v3/<YOUR-API-KEY> \
   <TabItem value="WSS" label="WSS" default>
 
 ```bash
-wscat -c wss://mantle-mainnet.infura.io/ws/v3/YOUR-API-KEY -x '{"jsonrpc": "2.0", "method": "rollup_getInfo", "params": [], "id": 1}'
+wscat -c wss://mantle-mainnet.infura.io/ws/v3/<YOUR-API-KEY> -x '{"jsonrpc": "2.0", "method": "rollup_getInfo", "params": [], "id": 1}'
 ```
 
   </TabItem>

@@ -1,9 +1,12 @@
 ---
-title: "zks_getBridgeContracts"
+title: zks_getBridgeContracts
+sidebar_label: zks_getBridgeContracts
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+
+# `zks_getBridgeContracts`
 
 Returns the L1 and L2 address of the default bridges.
 
@@ -15,26 +18,27 @@ None.
 
 The default bridges used in the ZKsync network:
 
-- `1Erc20DefaultBridge` - The address of the default bridge contract responsible for handling ERC-20 token
+- `l1Erc20DefaultBridge` - The address of the default bridge contract responsible for handling ERC-20 token
     transfers from the L1 network to the L2 network
 - `l2Erc20DefaultBridge` - The address of the default bridge contract responsible for handling ERC-20 token
     transfers from the L2 network to the L1 network
 
 ## Example
 
-Replace `<YOUR-API-KEY>` with an API key from your [Infura dashboard](https://infura.io/dashboard).
+Replace `<YOUR-API-KEY>` with an API key from your [MetaMask Developer dashboard](https://developer.metamask.io/).
 
 ### Request
 
 <Tabs>
-  <TabItem value="cURL">
+  <TabItem value="curl">
 
   ```bash
-    curl https://zksync-mainnet.infura.io/v3/<YOUR-API-KEY> \
+  curl https://zksync-mainnet.infura.io/v3/<YOUR-API-KEY> \
     -X POST \
     -H "Content-Type: application/json" \
     -d '{"jsonrpc": "2.0", "id": 1, "method": "zks_getBridgeContracts", "params": []}'
   ```
+
   </TabItem>
   <TabItem value="WSS">
 
@@ -49,6 +53,7 @@ wscat -c wss://zksync-mainnet.infura.io/ws/v3/<YOUR-API-KEY> -x '{"jsonrpc": "2.
 
 <Tabs>
   <TabItem value="JSON">
+
   ```json
   {
     "jsonrpc": "2.0",
@@ -59,5 +64,6 @@ wscat -c wss://zksync-mainnet.infura.io/ws/v3/<YOUR-API-KEY> -x '{"jsonrpc": "2.
     "id": 1
   }
   ```
+
   </TabItem>
 </Tabs>

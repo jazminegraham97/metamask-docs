@@ -24,24 +24,13 @@ Use [MetaMask](https://metamask.io) or similar to create an Ethereum account for
 
 ### 1. Select your network and verify funds
 
-<Tabs>
-  <TabItem value="Sepolia" label="Sepolia" default>
-
-To use the Sepolia testnet, ensure that your account has Sepolia ETH.
-You can use the [Infura faucet](https://www.infura.io/faucet) to add more funds.
-
-</TabItem>
-<TabItem value="Alternative network" label="Alternative network" default>
-
-To use an alternative network, ensure that your account has testnet ETH for that network.
-
-:::info note
-When using an alternative network, you'll update your `.env` file in
-[Step 4](#4-create-a-env-file) with the alternative network name.
-:::
-
-</TabItem>
-</Tabs>
+- **Sepolia** -  To use the Sepolia testnet, ensure that your account has Sepolia ETH.
+  You can use the [MetaMask faucet](/developer-tools/faucet) to add more funds.
+- **Alternative network** - To use an alternative network, ensure that your account has testnet ETH for that network.
+  :::info note
+  When using an alternative network, you'll update your `.env` file in
+  [Step 4](#4-create-a-env-file) with the alternative network name.
+  :::
 
 ### 2. Create a project directory
 
@@ -109,7 +98,7 @@ Replace the following values in the `.env` file:
 
 - `<NETWORK>` with `sepolia` or the alternative network you are using.
 - `<YOUR-API-KEY>` with your API key of the web3 project.
-- `<PRIVATE-KEY>` with the [private key of your Ethereum account](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key). A transaction must be signed with the sender's private key. Make sure that you prefix the `SIGNER_PRIVATE_KEY` value with `0x`. The private key you export from MetaMask isn't prefixed with `0x`.
+- `<PRIVATE-KEY>` with the [private key of your Ethereum account](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/). A transaction must be signed with the sender's private key. Make sure that you prefix the `SIGNER_PRIVATE_KEY` value with `0x`. The private key you export from MetaMask isn't prefixed with `0x`.
 
 :::danger
 
@@ -152,6 +141,8 @@ const { ethers, parseUnits } = require("ethers");
     // The transaction is now on chain!
     console.log(`Mined in block ${receipt.blockNumber}`);
   }
+
+main();
 ```
 
 ### 6. Execute the transaction
@@ -177,19 +168,21 @@ You can search for the transaction on a block explorer such as [Sepolia Ethersca
 To change default values, update the `signer.sendTransaction` method to include an `estimateGas` result:
 
 ```javascript title="eip1559_tx.js"
-const limit = provider.estimateGas({
+const { ethers, parseUnits } = require("ethers");
+
+const limit = await provider.estimateGas({
   from: signer.address,
   to: "<to_address_goes_here>",
-  value: ethers.utils.parseUnits("0.001", "ether"),
+  value: parseUnits("0.001", "ether"),
 });
 
 // Creating and sending the transaction object
 const tx = await signer.sendTransaction({
   to: "<to_address_goes_here>",
-  value: ethers.utils.parseUnits("0.001", "ether"),
+  value: parseUnits("0.001", "ether"),
   gasLimit: limit,
-  nonce: signer.getTransactionCount(),
-  maxPriorityFeePerGas: ethers.utils.parseUnits("2", "gwei"),
-  chainId: 3,
+  nonce: await signer.getTransactionCount(),
+  maxPriorityFeePerGas: parseUnits("2", "gwei"),
+  chainId: 11155111, // Sepolia
 });
 ```

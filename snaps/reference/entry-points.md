@@ -94,7 +94,7 @@ None.
 One of the following:
 
 - A `content` object displayed using [custom UI](../features/custom-ui/index.md).
-- An `id` returned by [`snap_createInterface`](./snaps-api.md#snap_createinterface) for
+- An `id` returned by [`snap_createInterface`](./snaps-api/snap_createinterface.mdx) for
   [interactive UI](../features/custom-ui/interactive-ui.md).
 
 #### Example
@@ -397,12 +397,9 @@ module.exports.onRpcRequest = async ({ origin, request }) => {
 
 ## `onSignature`
 
-:::flaskOnly
-:::
-
 To provide [signature insights](../features/signature-insights.md) before a user signs a message, a
 Snap must expose the `onSignature` entry point.
-Whenever a [signing method](/wallet/concepts/signing-methods) is called, such as `personal_sign` or
+Whenever a signing method is called, such as `personal_sign` or
 `eth_signTypedData_v4`, MetaMask passes the raw unsigned signature payload to the `onSignature`
 handler method.
 
@@ -506,6 +503,10 @@ An object containing:
 - `transactionOrigin` - The transaction origin if
   [`allowTransactionOrigin`](permissions.md#endowmenttransaction-insight) is set to `true`.
 
+:::note
+When interacting with EVM chain IDs, the provided chain ID uses the format `namespace:reference`, where the `reference` is a base 10 integer.
+:::
+
 #### Returns
 
 - An optional `severity` property that, if present, must be set to `"critical"`.
@@ -513,7 +514,7 @@ An object containing:
 - One of the following:
   - A `content` object displayed using [custom UI](../features/custom-ui/index.md), alongside the confirmation
     for the transaction that `onTransaction` was called with.
-  - An `id` returned by [`snap_createInterface`](./snaps-api.md#snap_createinterface) for
+  - An `id` returned by [`snap_createInterface`](./snaps-api/snap_createinterface.mdx) for
     [interactive UI](../features/custom-ui/interactive-ui.md).
 
 #### Example
@@ -639,9 +640,6 @@ export const onUpdate: OnUpdateHandler = async () => {
 
 ## `onUserInput`
 
-:::flaskOnly
-:::
-
 To respond to [interactive UI](../features/custom-ui/interactive-ui.md) events, a Snap must export `onUserInput`.
 
 #### Parameters
@@ -654,7 +652,7 @@ To respond to [interactive UI](../features/custom-ui/interactive-ui.md) events, 
   - `name` - The name of the component that fired the event.
     Optional when the event type is `ButtonClickEvent`.
   - `value` - When the event type is `FormSubmitEvent`, the values in the form as an object.
-- `context` - The context object passed to the interface when calling [`snap_createInterface`](./snaps-api.md#snap_createinterface), or `null`.
+- `context` - The context object passed to the interface when calling [`snap_createInterface`](./snaps-api/snap_createinterface.mdx), or `null`.
 
 #### Example
 

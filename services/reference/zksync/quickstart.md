@@ -1,11 +1,12 @@
 ---
 description: ZKsync Era quickstart guide
 sidebar_position: 2
+sidebar_label: Quickstart
 ---
 
 import Banner from '@site/src/components/Banner'
 
-# Quickstart
+# ZKsync Era quickstart
 
 This quickstart guide will help you set up and make calls on the ZKsync Era network using the Infura endpoints.
 
@@ -15,11 +16,11 @@ Don't have an Infura account? Sign up for our free plan and start using the ZKsy
 
 ## Prerequisites
 
-Ensure you have an [API key](../../../../developer-tools/dashboard/get-started/create-api/) with the ZKsync Era networked enabled.
+Ensure you have an [API key](/developer-tools/dashboard/get-started/create-api) with the ZKsync Era network enabled.
 
 ## Make calls
 
-### cURL
+### curl
 
 Run the following command in your terminal, replacing `<YOUR-API-KEY>` with your actual Infura API key:
 
@@ -36,7 +37,7 @@ In these examples, you'll use [npm](https://docs.npmjs.com/downloading-and-insta
 
 #### Node Fetch
 
-1. In your project folder, install the `node-fetch` package using npm::
+1. In your project folder, install the `node-fetch` package using npm:
 
    ```bash
    npm i node-fetch
@@ -185,7 +186,7 @@ In these examples, you'll use [npm](https://docs.npmjs.com/downloading-and-insta
    python index.py
    ```
 
-## Next Steps
+## Next steps
 
 Now that you have successfully made a call to the ZKsync Era network, you can explore more functionalities and APIs provided
 by Infura. Here are some suggestions:
@@ -195,7 +196,7 @@ by Infura. Here are some suggestions:
 
 - **Try out different networks**: Infura supports multiple networks including Arbitrum, Polygon, Optimism, IPFS, and more.
 
-- **Monitor your usage**: Keep an eye on your usage on the [Infura dashboard](../../../../../developer-tools/dashboard/how-to/dashboard-stats/) to ensure you're not hitting your rate limits.
+- **Monitor your usage**: Monitor your usage on the [MetaMask Developer dashboard](/developer-tools/dashboard/how-to/dashboard-stats) to ensure you're not hitting your rate limits.
 
-Remember, the Infura community is here to help. If you have any questions or run into any issues, check out the
-[Infura community](https://community.infura.io/) for help and answers to common questions.
+Remember, the MetaMask community is here to help. If you have any questions or run into any issues, check out the
+[MetaMask community](https://community.metamask.io/) for help and answers to common questions.

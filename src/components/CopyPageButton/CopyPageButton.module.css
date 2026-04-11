@@ -1,0 +1,130 @@
+/* H1 Wrapper styles */
+.h1Wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+  min-height: 48px;
+}
+
+@media (width >= 997px) {
+  .h1Wrapper h1 {
+    padding-right: 220px;
+  }
+}
+
+/* Button container styles */
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.h1Wrapper .container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.mainButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mainButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-400);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.mainButton:hover .arrow {
+  transform: translateY(1px);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 300px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+@media (width <= 996px) {
+  .container {
+    display: none;
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+  color: var(--ifm-font-color-base);
+}
+
+.dropdownItem:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.dropdownItem > svg:first-child {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+  margin: 4px 0;
+}
+
+.itemTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 1px;
+  color: var(--ifm-font-color-base);
+}
+
+.externalArrow {
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-500);
+  margin-top: 1px;
+}
+
+.itemDescription {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+}
+

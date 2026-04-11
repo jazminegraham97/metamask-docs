@@ -8,15 +8,16 @@ import CardList from '@site/src/components/CardList'
 
 The [Interplanetary File System (IPFS)](../../how-to/use-ipfs/migrate-to-infuras-ipfs-service.md) is a distributed, [peer-to-peer (p2p)](https://en.wikipedia.org/wiki/Peer-to-peer) storage network used for storing and accessing files, websites, applications, and data.
 
-:::caution Limited access
+:::caution Restricted access
 
-Infura restricts its IPFS service to a select set of qualified customers. Please [contact the Infura support team](https://support.infura.io/ipfs) for next steps. New IPFS key creation is disabled for all users, but existing IPFS customers can continue to use the IPFS service with their existing keys.
+New IPFS key creation is disabled for all users. Only IPFS keys that were active in late 2024 continue
+to have access to the IPFS network.
 
 :::
 
 Content is accessible from peer nodes located anywhere in the world. These nodes relay information, store it, or both.
 
-To integrate your IPFS project with Infura, create an [Infura API key](../../get-started/infura.md#2-create-an-api-key).
+To integrate your IPFS project with Infura, create an [Infura API key](../../get-started/infura.md#2-view-your-api-key).
 
 :::info See also
 
@@ -27,19 +28,19 @@ See the [official IPFS documentation](https://docs.ipfs.io) for more information
 <CardList
   items={[
     {
-      href: "quickstart",
+      href: "/services/reference/ipfs/quickstart",
       title: "Quickstart",
       description: "Learn how to quickly connect and make calls to the IPFS network."
     },
     {
-      href: "http-api-methods",
+      href: "/services/reference/ipfs/http-api-methods",
       title: "HTTP APIs",
       description: "View the APIs available for communicating with the IPFS network."
     },
     {
-      href: "../../../developer-tools/dashboard/get-started/create-api/",
+      href: "/developer-tools/dashboard/get-started/create-api",
       title: "Create an API key",
-      description: "Learn how to create an API key and secure and share it with your team."
+      description: "Learn how to create and secure an API key."
     }
   ]}
 />

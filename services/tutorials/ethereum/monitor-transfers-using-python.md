@@ -65,7 +65,7 @@ Replace `<YOUR-API-KEY>` with your Infura API key and `<YOUR-PUBLIC-ADDRESS>` wi
 
 ### 5. Set the function
 
-Create a function to check new transactions for the account defined in [step 3](monitor-transfers-using-python.md#3.-create-a-script-file) and retrieves the details for the transaction:
+Create a function to check new transactions for the account defined in [step 3](#3-create-a-script-file) and retrieves the details for the transaction:
 
 ```python
 def watch():
@@ -83,7 +83,7 @@ def watch():
             print({
               "hash": tx_hash,
               "from": tx["from"],
-              "value": web3.fromWei(tx["value"], "ether")
+              "value": web3.from_wei(tx["value"], "ether")
             })
     time.sleep(5)
 
@@ -92,7 +92,7 @@ watch()
 
 ### 6. Check for confirmations
 
-Exchanges often wait until a deposit has reached a certain number of confirmations before processing the new transaction. The number of confirmations is the number of blocks that have passed since the transaction was included on-chain. By checking that a transaction has reached the specified number of confirmations, the exchange can be confident that this transaction is final and they can process the deposit.
+Exchanges often wait until a deposit has reached a certain number of confirmations before processing the new transaction. The number of confirmations is the number of blocks that have passed since the transaction was included onchain. By checking that a transaction has reached the specified number of confirmations, the exchange can be confident that this transaction is final and they can process the deposit.
 
 Create a function to determine the number of confirmations for the transaction:
 

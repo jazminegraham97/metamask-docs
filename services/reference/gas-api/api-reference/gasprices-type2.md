@@ -2,13 +2,14 @@
 description: Get the estimated gas prices for a chain.
 ---
 
+import CreditCost from '@site/src/components/CreditCost/CreditCostPrice.js';
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 # Get EIP-1559 gas prices
 
 Returns the estimated [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) gas fees for the specified
-blockchain network.
+blockchain network. <CreditCost network="gasApi" method="suggestedGasFees" />
 
 **GET** `https://gas.api.infura.io/networks/${chainId}/suggestedGasFees`
 
@@ -17,6 +18,7 @@ blockchain network.
 **Path**:
 
 - `chainId`: `string` - ID of the chain to query.
+  See the [list of supported chain IDs](../../../get-started/endpoints.md#gas-api).
 
 ## Returns
 
@@ -40,17 +42,17 @@ Recommended gas price details based of the level of urgency:
 
 ### Request
 
-Include your [API key](../../../../../developer-tools/dashboard/get-started/create-api)
-and optional [API key secret](../../../../../developer-tools/dashboard/how-to/secure-an-api/api-key-secret/)
+Include your [API key](/developer-tools/dashboard/get-started/create-api)
+and optional [API key secret](/developer-tools/dashboard/how-to/secure-an-api/api-key-secret)
 to authorize your account to use the APIs.
 
 :::tip
 You can call the API with only an API key, and [include it as a path parameter](../api-reference/index.md#supported-api-request-formats)
-instead of using the cURL authentication option (`-u`).
+instead of using the curl authentication option (`-u`).
 :::
 
 <Tabs>
-  <TabItem value="cURL" label="cURL" default >
+  <TabItem value="curl" label="curl" default >
 
 ```bash
 curl -X "GET" \

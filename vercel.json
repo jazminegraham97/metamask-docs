@@ -3,364 +3,320 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/guide/",
-      "destination": "/wallet/"
+      "source": "/developer-tools/dashboard/how-to/project-sharing/",
+      "destination": "/developer-tools/dashboard/"
     },
     {
-      "source": "/guide/common-terms/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/guide/contributors/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/guide/create-dapp/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/guide/getting-started/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/wallet/category/get-started/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/wallet/how-to/get-started-building/",
-      "destination": "/wallet/"
-    },
-    {
-      "source": "/guide/metamask-extension-provider/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/quickstart/javascript/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/quickstart/react/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/quickstart/other-platforms/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/discover-multiple-wallets/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/detect-wallet/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/detect-wallet/multiple-wallets/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/access-provider/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/use-3rd-party-integrations/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/3rd-party-libraries/",
-      "destination": "/wallet/connect/"
-    },
-    {
-      "source": "/wallet/how-to/connect/set-up-sdk/:path*/",
-      "destination": "/wallet/connect/metamask-sdk/:path*/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/:path*/",
-      "destination": "/wallet/connect/metamask-sdk/:path*/"
-    },
-    {
-      "source": "/wallet/concepts/sdk/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/guide/mobile-getting-started/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/guide/site-compatibility-checklist/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/guide/mobile-best-practices/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/wallet/how-to/use-mobile/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/wallet/how-to/integrate-with-mobile/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/sdk/",
-      "destination": "/wallet/connect/metamask-sdk/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/javascript/react-native/",
-      "destination": "/wallet/connect/metamask-sdk/mobile/react-native/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/3rd-party-libraries/wagmi/",
-      "destination": "/wallet/connect/3rd-party-libraries/wagmi/"
-    },
-    {
-      "source": "/wallet/how-to/use-3rd-party-integrations/web3-onboard/",
-      "destination": "/wallet/connect/3rd-party-libraries/web3-onboard/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/3rd-party-libraries/web3-onboard/",
-      "destination": "/wallet/connect/3rd-party-libraries/web3-onboard/"
-    },
-    {
-      "source": "/wallet/category/how-to/",
-      "destination": "/wallet/how-to/"
-    },
-    {
-      "source": "/guide/accessing-accounts/",
-      "destination": "/wallet/how-to/access-accounts/"
-    },
-    {
-      "source": "/wallet/how-to/access-accounts/",
-      "destination": "/wallet/how-to/access-accounts/"
+      "source": "/wallet/how-to/connect/access-accounts/",
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
     },
     {
       "source": "/wallet/get-started/access-accounts/",
-      "destination": "/wallet/how-to/access-accounts/"
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
+    },
+    {
+      "source": "/wallet/how-to/manage-networks/",
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
     },
     {
       "source": "/wallet/get-started/detect-network/",
-      "destination": "/wallet/how-to/manage-networks/detect-network/"
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
     },
     {
       "source": "/wallet/how-to/connect/detect-network/",
-      "destination": "/wallet/how-to/manage-networks/detect-network/"
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
     },
     {
       "source": "/wallet/how-to/detect-network/",
-      "destination": "/wallet/how-to/manage-networks/detect-network/"
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
     },
     {
       "source": "/wallet/how-to/add-network/",
-      "destination": "/wallet/how-to/manage-networks/add-network/"
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
     },
     {
       "source": "/guide/signing-data/",
-      "destination": "/wallet/how-to/sign-data/"
+      "destination": "/metamask-connect/evm/guides/sign-data/"
     },
     {
-      "source": "/wallet/how-to/use-sdk/javascript/connect-and-sign/",
-      "destination": "/wallet/how-to/sign-data/connect-and-sign/"
+      "source": "/wallet/how-to/sign-data/connect-and-sign/",
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
     },
     {
       "source": "/wallet/how-to/use-siwe/",
-      "destination": "/wallet/how-to/sign-data/siwe/"
+      "destination": "/metamask-connect/evm/guides/sign-data/siwe/"
     },
     {
       "source": "/guide/sending-transactions/",
-      "destination": "/wallet/how-to/send-transactions/"
+      "destination": "/metamask-connect/evm/guides/send-transactions/"
     },
     {
-      "source": "/wallet/how-to/use-3rd-party-integrations/js-infura-api/",
-      "destination": "/wallet/how-to/make-read-only-requests/"
+      "source": "/wallet/how-to/batch-json-rpc-requests/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/batch-requests/"
     },
     {
-      "source": "/wallet/how-to/use-sdk/javascript/make-read-only-requests/",
-      "destination": "/wallet/how-to/make-read-only-requests/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/javascript/batch-json-rpc-requests/",
-      "destination": "/wallet/how-to/batch-json-rpc-requests/"
+      "source": "/wallet/how-to/display/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/display-tokens/"
     },
     {
       "source": "/guide/registering-your-token/",
-      "destination": "/wallet/how-to/display/tokens/"
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/display-tokens/"
     },
     {
       "source": "/wallet/how-to/register-token/",
-      "destination": "/wallet/how-to/display/tokens/"
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/display-tokens/"
     },
     {
       "source": "/guide/registering-function-names/",
-      "destination": "/wallet/how-to/display/method-names/"
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
     },
     {
       "source": "/wallet/how-to/register-method-names/",
-      "destination": "/wallet/how-to/display/method-names/"
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
     },
     {
       "source": "/guide/defining-your-icon/",
-      "destination": "/wallet/how-to/display/icon/"
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
     },
     {
       "source": "/wallet/how-to/set-icon/",
-      "destination": "/wallet/how-to/display/icon/"
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
     },
     {
-      "source": "/wallet/how-to/use-sdk/javascript/display-custom-modals/",
-      "destination": "/wallet/how-to/display/custom-modals/"
-    },
-    {
-      "source": "/wallet/how-to/request-permissions/",
-      "destination": "/wallet/how-to/manage-permissions/"
-    },
-    {
-      "source": "/wallet/how-to/use-3rd-party-integrations/unity-infura/",
-      "destination": "/wallet/how-to/use-unity-sdk/infura/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/gaming/unity/infura/",
-      "destination": "/wallet/how-to/use-unity-sdk/infura/"
-    },
-    {
-      "source": "/wallet/how-to/interact-with-smart-contracts/unity/:path*/",
-      "destination": "/wallet/how-to/use-unity-sdk/smart-contracts/:path*/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/gaming/unity/smart-contracts/:path*/",
-      "destination": "/wallet/how-to/use-unity-sdk/smart-contracts/:path*/"
-    },
-    {
-      "source": "/wallet/how-to/use-3rd-party-integrations/unity-dweb/",
-      "destination": "/wallet/how-to/use-unity-sdk/dweb/"
-    },
-    {
-      "source": "/wallet/how-to/use-sdk/gaming/unity/dweb/",
-      "destination": "/wallet/how-to/use-unity-sdk/dweb/"
-    },
-    {
-      "source": "/guide/onboarding-library/",
-      "destination": "/wallet/how-to/onboard-users/"
-    },
-    {
-      "source": "/wallet/how-to/use-onboarding-library/",
-      "destination": "/wallet/how-to/onboard-users/"
+      "source": "/wallet/how-to/interact-with-smart-contracts/:path*/",
+      "destination": "/metamask-connect/evm/guides/interact-with-contracts/"
     },
     {
       "source": "/wallet/get-started/run-development-network/",
-      "destination": "/wallet/how-to/run-devnet/"
+      "destination": "/metamask-connect/evm/guides/best-practices/run-devnet/"
     },
     {
       "source": "/wallet/how-to/get-started-building/run-devnet/",
-      "destination": "/wallet/how-to/run-devnet/"
-    },
-    {
-      "source": "/wallet/how-to/get-started-building/secure-dapp/",
-      "destination": "/wallet/how-to/secure-dapp/"
-    },
-    {
-      "source": "/wallet/category/concepts/",
-      "destination": "/wallet/concepts/"
-    },
-    {
-      "source": "/guide/provider-migration/",
-      "destination": "/wallet/concepts/wallet-api/"
-    },
-    {
-      "source": "/wallet/concepts/provider-api/",
-      "destination": "/wallet/concepts/wallet-api/"
-    },
-    {
-      "source": "/wallet/concepts/rpc-api/",
-      "destination": "/wallet/concepts/wallet-api/"
-    },
-    {
-      "source": "/wallet/how-to/migrate-api/",
-      "destination": "/wallet/concepts/wallet-api/"
-    },
-    {
-      "source": "/wallet/concepts/apis/",
-      "destination": "/wallet/concepts/wallet-api/"
-    },
-    {
-      "source": "/wallet/concepts/sdk/connections/",
-      "destination": "/wallet/concepts/sdk-connections/"
-    },
-    {
-      "source": "/wallet/concepts/sdk/android/",
-      "destination": "/wallet/concepts/android-sdk/"
+      "destination": "/metamask-connect/evm/guides/best-practices/run-devnet/"
     },
     {
       "source": "/guide/initializing-dapps/",
-      "destination": "/wallet/concepts/smart-contracts/"
+      "destination": "/metamask-connect/evm/guides/interact-with-contracts/"
     },
     {
       "source": "/wallet/how-to/interact-with-smart-contracts/",
-      "destination": "/wallet/concepts/smart-contracts/"
+      "destination": "/metamask-connect/evm/guides/interact-with-contracts/"
     },
     {
-      "source": "/wallet/category/tutorials/",
-      "destination": "/wallet/tutorials/"
+      "source": "/wallet/reference/sdk-js-options/",
+      "destination": "/metamask-connect/evm/reference/methods/"
     },
     {
-      "source": "/wallet/how-to/set-up-dev-environment/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
+      "source": "/metamask-connect/reference/sdk-options/",
+      "destination": "/metamask-connect/evm/reference/methods/"
     },
     {
-      "source": "/wallet/get-started/set-up-dev-environment/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/how-to/get-started-building/set-up-dev-environment/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/get-started/detect-metamask/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/how-to/detect-metamask/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/how-to/detect-wallet/metamask/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/how-to/connect/detect-metamask/",
-      "destination": "/wallet/tutorials/javascript-dapp-simple/"
-    },
-    {
-      "source": "/wallet/tutorials/simple-react-dapp/",
-      "destination": "/wallet/tutorials/react-dapp-local-state/"
+      "source": "/wallet/reference/",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
     },
     {
       "source": "/wallet/category/reference/",
-      "destination": "/wallet/reference/"
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
     },
     {
       "source": "/guide/ethereum-provider/",
-      "destination": "/wallet/reference/provider-api/"
+      "destination": "/metamask-connect/evm/reference/provider-api/"
+    },
+    {
+      "source": "/wallet/reference/json-rpc-api/",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
     },
     {
       "source": "/guide/rpc-api/",
-      "destination": "/wallet/reference/json-rpc-api/"
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
     },
     {
       "source": "/wallet/reference/rpc-api/",
-      "destination": "/wallet/reference/json-rpc-api/"
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
+    },
+    {
+      "source": "/wallet/reference/(eth_.*)",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/$1"
+    },
+    {
+      "source": "/wallet/reference/(wallet_.*)",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/$1"
+    },
+    {
+      "source": "/wallet/reference/(personal_.*)",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/$1"
+    },
+    {
+      "source": "/wallet/reference/(web3_.*)",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/$1"
+    },
+    {
+      "source": "/metamask-connect/guides/advanced/connect-and-sign/",
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
+    },
+    {
+      "source": "/metamask-connect/guides/advanced/batch-requests/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/batch-requests/"
+    },
+    {
+      "source": "/metamask-connect/guides/advanced/production-readiness/",
+      "destination": "/metamask-connect/evm/guides/best-practices/production-readiness/"
+    },
+    {
+      "source": "/metamask-connect/connect/javascript-wagmi/",
+      "destination": "/metamask-connect/evm/quickstart/wagmi/"
+    },
+    {
+      "source": "/metamask-connect/connect/javascript/",
+      "destination": "/metamask-connect/evm/quickstart/javascript/"
+    },
+    {
+      "source": "/metamask-connect/connect/react-native/",
+      "destination": "/metamask-connect/evm/quickstart/react-native/"
+    },
+    {
+      "source": "/metamask-connect/guides/authenticate-users/",
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
+    },
+    {
+      "source": "/metamask-connect/guides/manage-networks/",
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
+    },
+    {
+      "source": "/metamask-connect/guides/handle-transactions/",
+      "destination": "/metamask-connect/evm/guides/send-transactions/"
+    },
+    {
+      "source": "/metamask-connect/guides/interact-with-contracts/",
+      "destination": "/metamask-connect/evm/guides/interact-with-contracts/"
+    },
+    {
+      "source": "/metamask-connect/guides/use-deeplinks/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/use-deeplinks/"
+    },
+    {
+      "source": "/metamask-connect/guides/batch-requests/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/batch-requests/"
+    },
+    {
+      "source": "/metamask-connect/guides/production-readiness/",
+      "destination": "/metamask-connect/evm/guides/best-practices/production-readiness/"
+    },
+    {
+      "source": "/wallet/how-to/connect-extension/",
+      "destination": "/metamask-connect/evm/"
+    },
+    {
+      "source": "/wallet/how-to/access-accounts/",
+      "destination": "/metamask-connect/evm/guides/manage-user-accounts/"
+    },
+    {
+      "source": "/wallet/how-to/manage-networks/detect-network/",
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
+    },
+    {
+      "source": "/wallet/how-to/manage-networks/add-network/",
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
+    },
+    {
+      "source": "/wallet/how-to/manage-networks/use-multichain/",
+      "destination": "/metamask-connect/evm/guides/manage-networks/"
+    },
+    {
+      "source": "/wallet/how-to/sign-data/",
+      "destination": "/metamask-connect/evm/guides/sign-data/"
+    },
+    {
+      "source": "/wallet/how-to/sign-data/siwe/",
+      "destination": "/metamask-connect/evm/guides/sign-data/siwe/"
+    },
+    {
+      "source": "/wallet/how-to/send-transactions/",
+      "destination": "/metamask-connect/evm/guides/send-transactions/"
+    },
+    {
+      "source": "/wallet/how-to/send-transactions/send-batch-transactions/",
+      "destination": "/metamask-connect/evm/guides/send-transactions/batch-transactions/"
+    },
+    {
+      "source": "/wallet/how-to/display/tokens/",
+      "destination": "/metamask-connect/evm/guides/metamask-exclusive/display-tokens/"
+    },
+    {
+      "source": "/wallet/how-to/display/method-names/",
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
+    },
+    {
+      "source": "/wallet/how-to/display/icon/",
+      "destination": "/metamask-connect/evm/guides/best-practices/display/"
+    },
+    {
+      "source": "/wallet/how-to/use-non-evm-networks/solana/",
+      "destination": "/metamask-connect/solana/"
+    },
+    {
+      "source": "/wallet/how-to/run-devnet/",
+      "destination": "/metamask-connect/evm/guides/best-practices/run-devnet/"
+    },
+    {
+      "source": "/metamask-connect/connect/javascript-dynamic/",
+      "destination": "/metamask-connect/evm/quickstart/dynamic/"
+    },
+    {
+      "source": "/metamask-connect/connect/javascript-web3auth/",
+      "destination": "/metamask-connect/evm/quickstart/web3auth/"
+    },
+    {
+      "source": "/wallet/concepts/signing-methods/",
+      "destination": "/metamask-connect/evm/guides/sign-data/"
+    },
+    {
+      "source": "/wallet/concepts/smart-contracts/",
+      "destination": "/metamask-connect/evm/guides/interact-with-contracts/"
+    },
+    {
+      "source": "/metamask-connect/reference/supported-platforms/",
+      "destination": "/metamask-connect/supported-platforms/"
+    },
+    {
+      "source": "/metamask-connect/reference/sdk-methods/",
+      "destination": "/metamask-connect/evm/reference/methods/"
+    },
+    {
+      "source": "/wallet/reference/provider-api/",
+      "destination": "/metamask-connect/evm/reference/provider-api/"
+    },
+    {
+      "source": "/wallet/reference/multichain-api/",
+      "destination": "/metamask-connect/multichain/reference/api/"
+    },
+    {
+      "source": "/wallet/reference/json-rpc-methods/",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
+    },
+    {
+      "source": "/wallet/reference/json-rpc-methods/:path*/",
+      "destination": "/metamask-connect/evm/reference/json-rpc-api/"
     },
     {
       "source": "/guide/snaps/",
       "destination": "/snaps/"
     },
     {
+      "source": "/snaps/get-started/",
+      "destination": "/snaps/get-started/install-flask/"
+    },
+    {
       "source": "/snaps/category/get-started/",
-      "destination": "/snaps/get-started/"
+      "destination": "/snaps/get-started/install-flask/"
     },
     {
       "source": "/snaps/get-started/install-snaps/",
       "destination": "/snaps/get-started/install-flask/"
+    },
+    {
+      "source": "/snaps/learn/",
+      "destination": "/snaps/learn/about-snaps/"
     },
     {
       "source": "/guide/snaps-concepts/",
@@ -403,12 +359,16 @@
       "destination": "/snaps/learn/about-snaps/files/"
     },
     {
+      "source": "/snaps/learn/tutorials/",
+      "destination": "/snaps/learn/tutorials/gas-estimation/"
+    },
+    {
       "source": "/snaps/category/tutorials/",
-      "destination": "/snaps/learn/tutorials/"
+      "destination": "/snaps/learn/tutorials/gas-estimation/"
     },
     {
       "source": "/snaps/tutorials/",
-      "destination": "/snaps/learn/tutorials/"
+      "destination": "/snaps/learn/tutorials/gas-estimation/"
     },
     {
       "source": "/snaps/tutorials/gas-estimation/",
@@ -417,6 +377,10 @@
     {
       "source": "/snaps/tutorials/transaction-insights/",
       "destination": "/snaps/learn/tutorials/transaction-insights/"
+    },
+    {
+      "source": "/snaps/learn/best-practices/",
+      "destination": "/snaps/learn/best-practices/design-guidelines/"
     },
     {
       "source": "/snaps/concepts/design-guidelines/",
@@ -439,8 +403,16 @@
       "destination": "/snaps/learn/resources/"
     },
     {
+      "source": "/snaps/how-to/",
+      "destination": "/snaps/how-to/request-permissions/"
+    },
+    {
       "source": "/snaps/category/how-to/",
-      "destination": "/snaps/how-to/"
+      "destination": "/snaps/how-to/request-permissions/"
+    },
+    {
+      "source": "/snaps/features/",
+      "destination": "/snaps/features/cron-jobs/"
     },
     {
       "source": "/snaps/how-to/use-custom-ui/",
@@ -487,10 +459,6 @@
       "destination": "/snaps/how-to/debug-a-snap/common-issues/"
     },
     {
-      "source": "/guide/snaps-development-guide/",
-      "destination": "/snaps/how-to/publish-a-snap/"
-    },
-    {
       "source": "/snaps/how-to/develop-a-snap/",
       "destination": "/snaps/how-to/publish-a-snap/"
     },
@@ -503,8 +471,12 @@
       "destination": "/snaps/how-to/connect-to-a-snap/"
     },
     {
+      "source": "/snaps/reference/",
+      "destination": "/snaps/reference/snaps-api/"
+    },
+    {
       "source": "/snaps/category/reference/",
-      "destination": "/snaps/reference/"
+      "destination": "/snaps/reference/snaps-api/"
     },
     {
       "source": "/guide/snaps-rpc-api/",
@@ -521,6 +493,58 @@
     {
       "source": "/snaps/reference/exports/",
       "destination": "/snaps/reference/entry-points/"
+    },
+    {
+      "source": "/snaps/reference/cli/subcommands/",
+      "destination": "/snaps/reference/cli/"
+    },
+    {
+      "source": "/snaps/reference/cli/options/",
+      "destination": "/snaps/reference/config-options/"
+    },
+    {
+      "source": "/snaps/tags/",
+      "destination": "/snaps/"
+    },
+    {
+      "source": "/snaps/tags/keyring-api/",
+      "destination": "/snaps/features/custom-evm-accounts/"
+    },
+    {
+      "source": "/services/get-started/",
+      "destination": "/services/get-started/infura"
+    },
+    {
+      "source": "/services/how-to/",
+      "destination": "/services/how-to/avoid-rate-limiting"
+    },
+    {
+      "source": "/services/how-to/use-ipfs/access-ipfs-content",
+      "destination": "/services/how-to/use-ipfs/access-ipfs-content/dedicated-gateways"
+    },
+    {
+      "source": "/services/concepts/",
+      "destination": "/services/concepts/failover-protection"
+    },
+    {
+      "source": "/services/tutorials/",
+      "destination": "/services/tutorials/ethereum/authenticate-with-jwt"
+    },
+    {
+      "source": "/services/tutorials/ethereum/",
+      "destination": "/services/tutorials/ethereum/authenticate-with-jwt"
+    },
+    {
+      "source": "/services/tutorials/layer-2-networks/deploy-an-nft-smart-contract-on-palm/",
+      "destination": "/services/"
+    },
+    {
+      "source": "/services/tutorials/layer-2-networks/",
+      "destination": "/services/tutorials/layer-2-networks/send-a-transaction/"
+    },
+    {
+      "source": "/services/reference/",
+      "destination": "/services/reference/arbitrum/"
     },
     {
       "source": "/services/gas-api/",
@@ -549,6 +573,94 @@
     {
       "source": "/services/gas-api/api-reference/busythreshold/",
       "destination": "/services/reference/gas-api/api-reference/busythreshold/"
+    },
+    {
+      "source": "/services/reference/:path*/json-rpc-methods/eth_sign/",
+      "destination": "/services/get-started/infura/"
+    },
+    {
+      "source": "/services/reference/:path*/json-rpc-methods/eth_sendtransaction/",
+      "destination": "/services/get-started/infura/"
+    },
+    {
+      "source": "/services/reference/:path*/json-rpc-methods/eth_coinbase/",
+      "destination": "/services/get-started/infura/"
+    },
+    {
+      "source": "/developer-tools/faucet/sepolia/",
+      "destination": "/developer-tools/faucet/"
+    },
+    {
+      "source": "/services/api/learn/pricing/",
+      "destination": "/services/get-started/pricing/credit-cost/"
+    },
+    {
+      "source": "/services/reference/:path*/eth_newpendingtransactionfilter/",
+      "destination": "/services/reference/:path*/"
+    },
+    {
+      "source": "/services/reference/ethereum/how-to/secure-a-project/project-secret/",
+      "destination": "/developer-tools/dashboard/how-to/secure-an-api/api-key-secret/"
+    },
+    {
+      "source": "/services/reference/ipfs/how-to/:path*/",
+      "destination": "/services/how-to/use-ipfs/:path*/"
+    },
+    {
+      "source": "/delegation-toolkit/:path*/",
+      "destination": "/smart-accounts-kit/"
+    },
+    {
+      "source": "/developer-tools/dashboard/how-to/",
+      "destination": "/developer-tools/dashboard/"
+    },
+    {
+      "source": "/developer-tools/dashboard/how-to/secure-an-api/",
+      "destination": "/developer-tools/dashboard/how-to/secure-an-api/api-key-secret/"
+    },
+    {
+      "source": "/embedded-wallets/connect-blockchain/custom-chains/",
+      "destination": "/embedded-wallets/connect-blockchain/other/"
+    },
+    {
+      "source": "/embedded-wallets/connect-blockchain/evm/:path*/web/",
+      "destination": "/embedded-wallets/connect-blockchain/evm/:path*/"
+    },
+    {
+      "source": "/embedded-wallets/connect-blockchain/xrpl/",
+      "destination": "/embedded-wallets/connect-blockchain/"
+    },
+    {
+      "source": "/embedded-wallets/dashboard/whitelist/",
+      "destination": "/embedded-wallets/dashboard/allowlist/"
+    },
+    {
+      "source": "/embedded-wallets/how-it-works/",
+      "destination": "/embedded-wallets/"
+    },
+    {
+      "source": "/guide/",
+      "destination": "/metamask-connect/"
+    },
+    {
+      "source": "/guide/:path*/",
+      "destination": "/metamask-connect/"
+    },
+    {
+      "source": "/wallet/",
+      "destination": "/metamask-connect/"
+    },
+    {
+      "source": "/wallet/:path*/",
+      "destination": "/metamask-connect/"
+    },
+    {
+      "source": "/sdk/",
+      "destination": "/metamask-connect/"
+    },
+    {
+      "source": "/sdk/:path*/",
+      "destination": "/metamask-connect/"
     }
   ]
 }

@@ -128,8 +128,8 @@ func main() {
 
 Replace the following values in the script:
 
-- `<API_KEY>` with the Infura API key.
-- `<PRIVATE-KEY>` with the [private key of your Ethereum account](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
+- `<YOUR-API-KEY>` with the Infura API key.
+- `<PRIVATE-KEY>` with the [private key of your Ethereum account](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
 - `<ADDRESS-TO>` with the address of the recipient of funds.
 
 If using a different Ethereum network, update the URL in the script.

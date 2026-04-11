@@ -26,7 +26,7 @@ how it's executed.
 ## Supported globals
 
 A Snap can access the [Snaps API](apis.md#snaps-api) using the `snap` global, and the
-[MetaMask JSON-RPC API](apis.md#metamask-json-rpc-api) using the `ethereum` global.
+[Wallet API](apis.md#wallet-api) using the `ethereum` global.
 To access the `ethereum` global, a Snap must request the
 [`endowment:ethereum-provider`](../../reference/permissions.md#endowmentethereum-provider) permission.
 
@@ -51,7 +51,7 @@ The following globals are also available:
 
 :::info note
 To use Node.js built-in modules such as `crypto` and `path`, set the
-[`polyfills`](../../reference/cli/options.md#polyfills) configuration option to `true`.
+[`polyfills`](../../reference/config-options.md#polyfills) configuration option to `true`.
 :::
 
 ## Secure ECMAScript (SES)

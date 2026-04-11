@@ -1,58 +1,56 @@
-import React, { useMemo } from "react";
-import { usePluginData } from "@docusaurus/useGlobalData";
-import { useLocation } from "@docusaurus/router";
-import Layout from "@theme-original/Layout";
-import ParserOpenRPC from "@site/src/components/ParserOpenRPC";
-import { ResponseItem, NETWORK_NAMES } from "@site/src/plugins/plugin-json-rpc";
-import styles from "./styles.module.css";
+import React, { type ReactNode } from 'react'
+import clsx from 'clsx'
+import ErrorBoundary from '@docusaurus/ErrorBoundary'
+import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common'
+import { useKeyboardNavigation } from '@docusaurus/theme-common/internal'
+import { useLocation } from '@docusaurus/router'
+import SkipToContent from '@theme/SkipToContent'
+import AnnouncementBar from '@theme/AnnouncementBar'
+import Navbar from '@theme/Navbar'
+import Footer from '@theme/Footer'
+import LayoutProvider from '@theme/Layout/Provider'
+import ErrorPageContent from '@theme/ErrorPageContent'
+import SubNavBar from '@site/src/components/SubNavBar'
+import { getSubNavConfigForPath } from '@site/src/components/SubNavBar/configs'
+import type { Props } from '@theme/Layout'
+import styles from './styles.module.css'
 
-const REF_PATH = "/wallet/reference/";
+export default function Layout(props: Props): ReactNode {
+  const {
+    children,
+    noFooter,
+    wrapperClassName,
+    // Not really layout-related, but kept for convenience/retro-compatibility
+    title,
+    description,
+  } = props
 
-export default function LayoutWrapper({ children }) {
-  const location = useLocation();
-  const { netData } = usePluginData("plugin-json-rpc") as {
-    netData?: ResponseItem[];
-  };
+  useKeyboardNavigation()
 
-  const metamaskNetwork = netData?.find(
-    (net) => net.name === NETWORK_NAMES.metamask
-  );
-  const metamaskMethods =
-    metamaskNetwork?.data?.methods?.map((item) => item.name) || [];
-
-  const referencePageName = useMemo(() => {
-    const currentPath = location.pathname;
-    if (currentPath.includes(REF_PATH) && metamaskMethods.length > 0) {
-      const methodPath = currentPath.replace(REF_PATH, "").replace("/", "");
-      const page = metamaskMethods.find(
-        (name) => name.toLowerCase() === methodPath
-      );
-      return page;
-    }
-    return false;
-  }, [location.pathname, metamaskMethods]);
+  const location = useLocation()
+  const subNavConfig = getSubNavConfigForPath(location.pathname)
 
   return (
-    <>
-      {referencePageName ? (
-        <Layout>
-          <div className={styles.pageWrapper}>
-            {children?.props?.children[0]?.type === "aside" && (
-              <>{children.props.children[0]}</>
-            )}
-            <div className={styles.mainContainer}>
-              <div className={styles.contentWrapper}>
-                <ParserOpenRPC
-                  network={NETWORK_NAMES.metamask}
-                  method={referencePageName}
-                />
-              </div>
-            </div>
-          </div>
-        </Layout>
-      ) : (
-        <Layout>{children}</Layout>
-      )}
-    </>
-  );
+    <LayoutProvider>
+      <PageMetadata title={title} description={description} />
+
+      <SkipToContent />
+
+      <AnnouncementBar />
+
+      <Navbar />
+
+      {subNavConfig && <SubNavBar config={subNavConfig} />}
+
+      <div
+        id={SkipToContentFallbackId}
+        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}>
+        <ErrorBoundary fallback={params => <ErrorPageContent {...params} />}>
+          {children}
+        </ErrorBoundary>
+      </div>
+
+      {!noFooter && <Footer />}
+    </LayoutProvider>
+  )
 }

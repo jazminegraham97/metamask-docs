@@ -7,7 +7,7 @@ sidebar_position: 8
 
 [`dotenv`](https://www.npmjs.com/package/dotenv) is an [npm](https://www.npmjs.com/) JavaScript package that loads environment variables from a `.env` file into the `process.env` global variable, storing configuration in the environment separate from the code.
 
-When you create a dapp using Infura, store your environment variables on your local machine using `dotenv` to protect sensitive information, such as Infura API URLs and MetaMask mnemonics, from pushing to GitHub and becoming publicly accessible.
+When you create a dapp using Infura, store your environment variables on your local machine using `dotenv` to protect sensitive information, such as Infura API URLs and MetaMask mnemonics, from being pushed to GitHub and becoming publicly accessible.
 
 ### Install `dotenv`
 
@@ -37,7 +37,7 @@ You can create a `package.json` file by running a CLI questionnaire, or by creat
 At the root of your project directory, create a file named `.env` containing environment variables for sensitive information that shouldn't be shared, such as an Infura API key, Ethereum private key, or MetaMask secret recovery phrase:
 
 ```bash
-INFURA_API_KEY = "<YOUR-API-KEY>"
+RPC_URL = "https://sepolia.infura.io/v3/<YOUR-API-KEY>"
 PRIVATE_KEY = "<YOUR-PRIVATE-KEY>"
 ```
 
@@ -64,8 +64,8 @@ require("dotenv").config()
 module.exports = {
   solidity: "0.8.0",
   networks: {
-    rinkeby: {
-      url: process.env.INFURA_API_KEY,
+    sepolia: {
+      url: process.env.RPC_URL,
       accounts: [process.env.PRIVATE_KEY],
     },
   },

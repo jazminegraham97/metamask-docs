@@ -45,20 +45,20 @@ JSON-RPC method for the relevant network. You can also see the following tutoria
 
 ## Supported networks
 
-Infura support subscriptions over WebSockets for the following networks:
+Infura supports subscriptions over WebSockets for the following networks:
 
 - [Arbitrum](../reference/arbitrum/index.md)
 - [Avalanche (C-Chain)](../reference/avalanche-c-chain/index.md)
 - [Base](../reference/base/index.md)
 - [Binance Smart Chain](../reference/bnb-smart-chain/index.md)
 - [Blast](../reference/blast/index.md)
-- [Celo](../reference/celo/index.md)
 - [Ethereum](../reference/ethereum/index.md)
 - [Linea](../reference/linea/index.md)
 - [Mantle](../reference/mantle/index.md)
 - [opBNB](../reference/opbnb/index.md)
 - [Optimism](../reference/optimism/index.md)
 - [Polygon](../reference/polygon-pos/index.md)
+- [Scroll](../reference/scroll/index.md)
 - [ZKsync Era](../reference/zksync/index.md)
 
 :::info
@@ -85,7 +85,7 @@ Credits are consumed for these actions to prevent spamming, even if no valuable 
 
 :::tip
 
-Refer to the [credit cost table](../get-started/pricing/credit-cost.md) for more information about the
+Refer to the [credit cost table](../get-started/pricing/credit-cost.mdx) for more information about the
 credit costs associated with the relevant method calls.
 
 For users on the existing request-based billing system, WebSocket activity is counted toward your daily request
@@ -99,6 +99,6 @@ Additional credit-based charges are applied for the events returned:
 - `newHeads`: Each new block event consumes 50 credits from your daily quota. This event is triggered
     once per announced block.
 - `logs`: Depending on the filters applied, this event can consume 300 credits per block from your
-    daily quota. At most, one event per announced block is charged, and potentially none if filter constraints are not met.
+    daily quota. At most, one event per announced block is charged, or none if filter constraints are not met.
 - `newPendingTransaction`: An event is generated every 700-800ms, aggregating the total amount of
     pending transactions collected during that period. Each event consumes 200 credits from your daily quota.

@@ -1,9 +1,12 @@
 ---
-title: "zks_getTransactionDetails"
+title: zks_getTransactionDetails
+sidebar_label: zks_getTransactionDetails
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+
+# `zks_getTransactionDetails`
 
 Returns data about a transaction given by the transaction hash.
 
@@ -27,12 +30,12 @@ Object containing the transaction data:
 
 ## Example
 
-Replace `<YOUR-API-KEY>` with an API key from your [Infura dashboard](https://infura.io/dashboard).
+Replace `<YOUR-API-KEY>` with an API key from your [MetaMask Developer dashboard](https://developer.metamask.io/).
 
 ### Request
 
 <Tabs>
-  <TabItem value="cURL">
+  <TabItem value="curl">
 
   ```bash
   curl https://zksync-mainnet.infura.io/v3/<YOUR-API-KEY> \
@@ -55,6 +58,7 @@ wscat -c wss://zksync-mainnet.infura.io/ws/v3/<YOUR-API-KEY> -x '{"jsonrpc": "2.
 
 <Tabs>
   <TabItem value="JSON">
+
   ```json
   {
     "jsonrpc": "2.0",
@@ -72,5 +76,6 @@ wscat -c wss://zksync-mainnet.infura.io/ws/v3/<YOUR-API-KEY> -x '{"jsonrpc": "2.
     "id": 1
   }
   ```
+
   </TabItem>
 </Tabs>
