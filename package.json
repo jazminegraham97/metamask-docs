@@ -30,7 +30,7 @@
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^14.2.0",
     "@docusaurus/core": "3.9.2",
-    "@docusaurus/plugin-client-redirects": "3.9.2",
+    "@docusaurus/plugin-client-redirects": "3.10.0",
     "@docusaurus/plugin-content-docs": "3.9.2",
     "@docusaurus/plugin-content-pages": "3.9.2",
     "@docusaurus/plugin-google-gtag": "3.9.2",
